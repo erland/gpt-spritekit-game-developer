@@ -6,11 +6,11 @@ Skapa GPT:n **SpriteKit Game Designer & Developer** enligt `[PLAN]`, `[PLAN2]` o
 
 ## Aktuell version
 
-`1.0.0-rc9`
+`1.0.0-rc12`
 
 ## Aktuell fas
 
-Prompt 15 är genomförd som releasekandidat. Git/CI-stöd är tillagt och huvudinstruktionen har komprimerats till 7 707 tecken med bibehållen styrande täckning. Projektet är ännu inte fullt externt verifierat. `[PLAN3 Prompt 1–3]` är genomförda med assetmognadsmodell, valideringsmodell, leveranspaket, programmatisk efterbearbetning och ett utökat grafiktestpaket.
+Prompt 15 är genomförd som releasekandidat. Grafikansvaret har därefter renodlats i rc12. Git/CI-stöd är tillagt och huvudinstruktionen är fortsatt under Buildergränsen och innehåller nu en explicit styrregel för tekniska asset sheets. Projektet är ännu inte fullt externt verifierat. `[PLAN3 Prompt 1–4]` are implemented. T05B has also been refined after practical image-generation testing, and its core classification and verification rule is now enforced directly by the main instruction as well as the knowledge base.
 
 ## Genomfört
 
@@ -33,7 +33,7 @@ Prompt 15 är genomförd som releasekandidat. Git/CI-stöd är tillagt och huvud
 
 ## Instruktions- och knowledge-budget
 
-- Huvudinstruktion: 7 707 av 8 000 tecken.
+- Huvudinstruktion: 7 846 av 8 000 Unicode-tecken.
 - Knowledge-filer: 16 av 20.
 - Detaljer: `prompt-17/INSTRUCTION-COMPACTION-REPORT.md`.
 
@@ -61,8 +61,8 @@ Efter extern verifiering:
 ## PLAN3
 
 - `PLAN3.md` definierar en produktionssäker grafik- och assetpipeline.
-- `[PLAN3 Prompt 1–3]` är genomförda.
-- Nästa interna utvecklingssteg är `[PLAN3 Prompt 4]`.
+- `[PLAN3 Prompt 1–4]` are implemented.
+- T05B has been refined based on practical Preview output.
 
 
 ## PLAN3 Prompt 1
@@ -97,3 +97,18 @@ Efter extern verifiering:
 - Chat language follows the user.
 - Code, comments, identifiers, tests and technical documentation use English.
 - Explicitly requested in-game text may be Swedish or another language and should remain localizable.
+
+## T05B practical-test refinement
+
+- A visual asset collection is no longer accepted as a programmatically sliceable tile sheet by appearance alone.
+- Ground tiles, wall/edge tiles, multi-tile structures, props, interactive objects, animated effects, and signage must be classified.
+- Canvas size, logical footprint, anchor point, and visual overflow are separate required concepts.
+- Mixed geometry or animation requirements should result in separate sheets or atlases.
+- T05B now requires a machine-readable manifest or deterministic cell map.
+- Headings, captions, row separators, guide lines, and other presentation decoration are forbidden in the technical PNG.
+
+## rc12 graphics responsibility split
+
+- The GPT specifies and integrates graphics but is no longer the primary polished-graphics generator.
+- Asset Request Package and Asset Delivery Package are the handoff contract.
+- T05A–T05E now test planning, handoff, review, placeholders, and integration.

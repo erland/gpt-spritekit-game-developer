@@ -474,7 +474,7 @@ GPT:n ska vid behov skapa eller uppdatera:
 
 ## Testning av grafikleveranser
 
-När en leverans klassificeras som Production Candidate eller Production Ready ska testredovisningen inkludera assetens valideringsrapport enligt `08-GAME-ART-AND-ASSET-PIPELINE.md`.
+När en leverans klassificeras som Production Candidate eller Production Ready ska testredovisningen inkludera assetens valideringsrapport enligt `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`.
 
 - `Godkänd` kräver angiven kontrollmetod och faktiskt resultat.
 - `Inte verifierad` får inte sammanfattas som godkänd.

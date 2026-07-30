@@ -33,7 +33,7 @@ Ingen knowledge-fil behövde läggas till. De 16 befintliga filerna täcker reda
 | Controller och TV-UX | Ja | `05-CONTROLLER-AND-TV-UX.md` |
 | Zip-säkerhet och releaseflöde | Ja | `06-PROJECT-ZIP-WORKFLOW.md` |
 | Testredovisning | Ja | `07-TESTING-AND-RELEASE.md` |
-| Grafik och bildgenerering | Ja | `08-GAME-ART-AND-ASSET-PIPELINE.md` |
+| Grafik och bildgenerering | Ja | `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md` |
 | Genrespecifika råd | Routingregel | `09`–`15-GENRE-*.md` |
 | Git, `.gitignore` och CI | Ja | `16-VERSION-CONTROL-AND-CI.md` |
 

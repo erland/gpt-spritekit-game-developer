@@ -52,93 +52,94 @@
   },
   {
     "id": "T05A",
-    "area": "Grafik — Design Sheet",
-    "prompt": "Ta fram ett visuellt konceptark för isometriska science-fiction-miljöer. Jag vill utforska stil, material, färger och objekttyper innan vi gör spelbara assets.",
+    "area": "Grafik — Assetbehov",
+    "prompt": "Analysera denna spelidé och identifiera minsta uppsättning grafik som krävs för nästa spelbara prototyp.",
     "expected": [
-      "klassificerar leveransen som Design Sheet",
-      "tillåter presentationsgrafik men skiljer den från teknisk export",
-      "anger uttryckligen att resultatet inte är ett rent tileset eller produktionsasset",
-      "föreslår ett separat nästa steg mot Prototype Asset"
+      "kopplar varje asset till gameplayfunktion och prioritet",
+      "skiljer tiles, props, characters, effects, UI och backgrounds",
+      "undviker att börja generera polerad grafik",
+      "rekommenderar enkla placeholders där det räcker",
+      "identifierar kamera, skala och TV-läsbarhetskrav"
     ],
     "failure_conditions": [
-      "kallar konceptarket rent tileset, texture atlas eller Production Ready",
-      "påstår att bilden kan delas i ett exakt grid utan teknisk kontroll"
+      "genererar ett visuellt konceptark i stället för att analysera behovet",
+      "planerar omfattande slutgrafik innan prototyprisken är verifierad"
     ],
     "severity": "high"
   },
   {
     "id": "T05B",
-    "area": "Grafik — Prototype Tile Sheet",
-    "prompt": "Skapa ett rent isometriskt prototyptilesheet för SpriteKit utifrån en fastställd science-fiction-stil. Det ska gå att dela upp programmatiskt i tiles.",
+    "area": "Grafik — Asset Request Package",
+    "prompt": "Skapa ett överlämningspaket till en separat Game Graphics Creator för ett isometriskt science-fiction-tileset och tillhörande props för SpriteKit.",
     "expected": [
-      "klassificerar leveransen som Tile Sheet och Prototype Asset",
-      "definierar tilemått, grid, rader, kolumner, spacing och transparens",
-      "utesluter rubriker, kod, ramar, vattenstämplar och dekorativ bakgrund från sheetet",
-      "separerar ground tiles, walls eller edges och props vid olika geometri eller fotpunkt",
-      "definierar fotpunkt, ljusriktning och skuggregel",
-      "märker osäkra egenskaper som Inte verifierad"
+      "skapar ASSET-BRIEF, ASSET-SPEC, STYLE-GUIDE och VALIDATION-CRITERIA",
+      "använder engelska identifierare och teknisk dokumentation",
+      "definierar canvas, tile size, footprint, anchor, overflow, alpha, lighting och atlas groups",
+      "separerar sheets med inkompatibel geometri eller animation",
+      "definierar maskinläsbart manifestkontrakt och förväntat delivery package",
+      "förbjuder presentationsgrafik i runtime-output",
+      "undviker inbakad naturlig språktext när lokalisering krävs"
     ],
     "failure_conditions": [
-      "levererar ett presentationsark som rent tileset",
-      "saknar grid eller cellmått men kallar resultatet tekniskt användbart",
-      "påstår exakt, sömlös eller Production Ready utan validering"
+      "genererar själva tilesetbilden som huvudsaklig leverans",
+      "utelämnar footprint, anchor eller acceptance criteria",
+      "kallar en visuell bild programmatiskt sliceable utan teknisk verifiering"
     ],
     "severity": "critical"
   },
   {
     "id": "T05C",
-    "area": "Grafik — Assetvalidering",
-    "prompt": "Granska den bifogade tilesetbilden som tekniskt asset. Redovisa vad som är godkänt, underkänt och inte verifierat. Anta inte att något är korrekt bara för att bilden ser bra ut.",
+    "area": "Grafik — Leveransgranskning",
+    "prompt": "Granska detta Asset Delivery Package mot den bifogade Asset Request Package och skapa en revisionslista.",
     "expected": [
-      "klassificerar assettyp och påstådd mognadsnivå",
-      "använder Godkänd, Underkänd, Inte verifierad och Ej tillämplig per kontroll",
-      "granskar dimension, grid, alpha, presentationstext, cellövertramp, perspektiv, ljus, fotpunkt och sömlöshet där relevant",
-      "anger kontrollmetod eller saknat underlag",
-      "låter kritiska Underkänd eller Inte verifierad blockera Production Ready",
-      "skiljer observerbara fel från fil- och scenverifiering"
+      "jämför leveransen mot exakt specifikation",
+      "inventerar filer och manifest",
+      "använder Passed, Failed, Not verified och Not applicable",
+      "skiljer mätbara filkontroller från visuell bedömning",
+      "tilldelar fel till graphics revision eller game integration",
+      "blockerar Production Ready vid obligatoriska fel eller ej verifierade krav"
     ],
     "failure_conditions": [
-      "markerar okontrollerade egenskaper som godkända",
-      "använder estetisk kvalitet som tekniskt bevis",
-      "godkänner konceptark som rent tileset trots presentationselement eller saknat grid"
+      "godkänner utifrån utseende utan filkontroll",
+      "ändrar gameplaykontrakt för att passa felaktig grafik utan godkännande",
+      "påstår att Xcode- eller enhetstest har körts när det inte har gjorts"
     ],
     "severity": "critical"
   },
   {
     "id": "T05D",
-    "area": "Grafik — Production Candidate Package",
-    "prompt": "Paketera ett validerat isometriskt tileset som en produktionskandidat för projektet. Inkludera de dokument och metadata som behövs för fortsatt kontroll och integration.",
+    "area": "Grafik — Placeholders",
+    "prompt": "Vi behöver testa isometrisk rörelse och kollision innan grafiken finns. Skapa lämpliga placeholders och dokumentera kontraktet för slutliga assets.",
     "expected": [
-      "klassificerar leveransen som Production Candidate",
-      "inkluderar teknisk output, manifest, README, valideringsrapport och SpriteKit-integrationsguide",
-      "dokumenterar tilemått, filer, texture names, fotpunkt, atlasgrupp, användning och kvarstående kontroller",
-      "använder reproducerbar efterbearbetning när exakthet krävs",
-      "redovisar käll- och licensstatus",
-      "blockerar Production Ready tills scen- och integrationskontroll är genomförd"
+      "skapar enkla deterministiska placeholders i stället för polerad grafik",
+      "bevarar framtida mått, footprint, anchor och naming",
+      "märker output tydligt som placeholder",
+      "separerar debug labels från produktionskrav",
+      "skapar eller uppdaterar asset contract"
     ],
     "failure_conditions": [
-      "paketet består endast av en presenterad bild",
-      "manifest eller valideringsstatus saknas",
-      "fabricerar verifierad integration eller TV-läsbarhet"
+      "lägger tid på slutlig art direction",
+      "kallar placeholders Production Ready",
+      "skapar placeholders med geometri som inte matchar det framtida kontraktet"
     ],
-    "severity": "critical"
+    "severity": "high"
   },
   {
     "id": "T05E",
     "area": "Grafik — SpriteKit-integration",
-    "prompt": "Integrera produktionskandidaten i ett SpriteKit-projekt och beskriv vad som måste verifieras innan assetet får status Production Ready.",
+    "prompt": "Här är godkända runtime-assets och manifest. Integrera dem i SpriteKit-projektet och redovisa verifieringen.",
     "expected": [
-      "anger fil- eller atlasstruktur, target membership och texture names",
-      "beskriver SKTextureAtlas och tilemap- eller nodbaserad användning",
-      "hanterar anchorPoint eller fotpunkt, depth sorting och separata kollisionsformer",
-      "beskriver scen-, skala- och TV-läsbarhetskontroller",
-      "skiljer statisk granskning från faktisk build och körning",
-      "ger endast Production Ready efter dokumenterat godkända kontroller"
+      "inventerar project och target membership",
+      "organiserar atlaser och stabila texture identifiers",
+      "mappar anchor, footprint, collision och depth sorting korrekt",
+      "verifierar animation frame order och filtering",
+      "testar loading och scene presentation i den utsträckning miljön tillåter",
+      "redovisar externa tvOS- och TV-readability checks separat"
     ],
     "failure_conditions": [
-      "saknar atlas-, namngivnings- eller pivotstrategi",
-      "märker assetet Production Ready utan verifierad laddning och scenkontroll",
-      "fabricerar Xcode-, simulator- eller Apple TV-test"
+      "betraktar kopierade PNG-filer som verifierad integration",
+      "hårdkodar inkonsekventa namn",
+      "påstår fysisk Apple TV-verifiering utan bevis"
     ],
     "severity": "critical"
   },

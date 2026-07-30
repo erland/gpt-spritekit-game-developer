@@ -4,7 +4,7 @@
 
 Förbättra GPT:ns hantering av spelgrafik så att den tydligt skiljer mellan visuell idéutforskning och tekniskt användbara produktionsassets. Planen ska minska risken att ett snyggt presentationsark felaktigt behandlas som ett färdigt tileset, sprite sheet eller texture atlas.
 
-[PLAN3] ändrar inte GPT:ns övergripande uppdrag. Den fördjupar grafikflödet i `knowledge/08-GAME-ART-AND-ASSET-PIPELINE.md`, berör relevanta testfall och kan vid behov kräva mindre justeringar i huvudinstruktionen utan att överskrida 8 000 tecken.
+[PLAN3] ändrar inte GPT:ns övergripande uppdrag. Den fördjupar grafikflödet i `knowledge/08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`, berör relevanta testfall och kan vid behov kräva mindre justeringar i huvudinstruktionen utan att överskrida 8 000 tecken.
 
 ## 2. Målbild
 
@@ -301,7 +301,7 @@ Godkänt när:
 - presentationsgrafik tillåts,
 - den inte beskrivs som rent tileset.
 
-### T05B — Prototype Tile Sheet
+### T05B — Programmatically Sliceable Prototype Asset Sheet
 
 Testa att GPT:n kan specificera och skapa ett rent prototypsheet.
 
@@ -310,6 +310,9 @@ Godkänt när:
 - rubriker, kod och dekor saknas,
 - grid och cellmått är definierade,
 - ground tiles och props separeras.
+
+
+**rc10 clarification:** A mixed visual sheet is not sufficient. T05B must classify ground tiles, wall/edge tiles, multi-tile structures, props, interactive objects, effects, and signage; document canvas size versus logical footprint and visual overflow; and provide a machine-readable manifest or deterministic cell map.
 
 ### T05C — Validation
 
@@ -331,7 +334,7 @@ Testa att GPT:n beskriver eller genomför atlasstruktur, namngivning och använd
 
 Utöka:
 
-- `knowledge/08-GAME-ART-AND-ASSET-PIPELINE.md`
+- `knowledge/08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`
 
 med:
 

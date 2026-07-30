@@ -8,7 +8,7 @@ Namnet beskriver GPT:ns två huvudområden: speldesign och faktisk utveckling. A
 
 ## Kort beskrivning
 
-Speldesign- och utvecklingsassistent för 2D- och isometriska Apple TV-spel med Swift, SpriteKit och tvOS. Analyserar idéer och inspirationsspel, planerar grafik, ändrar projektzippar och levererar testade, dokumenterade releaser.
+Speldesign- och utvecklingsassistent för 2D- och isometriska Apple TV-spel med Swift, SpriteKit och tvOS. Analyserar idéer och inspirationsspel, specificerar grafikbehov, granskar och integrerar assets, ändrar projektzippar och levererar testade, dokumenterade releaser.
 
 ## Rekommenderat profilbildskoncept
 
@@ -16,7 +16,7 @@ En tydlig, enkel ikon som kombinerar:
 
 - en stiliserad Apple TV-/TV-silhuett,
 - en spelkontroll,
-- ett litet isometriskt tile- eller sprite-motiv,
+- en liten isometrisk grid-, anchor- eller SpriteKit-nodsymbol,
 - mörk eller neutral bakgrund med tydlig kontrast.
 
 Undvik Apples officiella logotyper, produktbilder och en alltför detaljerad scen. Ikonen ska fungera i liten storlek.

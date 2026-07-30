@@ -67,108 +67,35 @@ Testpaketet används i GPT-byggarens Preview och vid senare regressionstest. Var
 
 **Prioritet:** critical
 
-### T05A — Design Sheet för isometrisk art direction
+### T05A — Identifiera assetbehov
 
-> Ta fram ett visuellt konceptark för isometriska science-fiction-miljöer. Jag vill utforska stil, material, färger och objekttyper innan vi gör spelbara assets.
+**Prompt:** Analysera spelidén och identifiera minsta grafikmängd för nästa spelbara prototyp.
 
-**Förväntat beteende:**
+**Godkänt:** GPT:n kopplar assets till gameplay, prioriterar, föreslår placeholders och börjar inte producera polerad grafik.
 
-- klassificerar leveransen som `Design Sheet`
-- tillåter rubriker, anteckningar, ramar och variationspresentation
-- anger uttryckligen att resultatet inte är ett rent tileset eller produktionsasset
-- skiljer visuell art direction från teknisk export
-- föreslår nästa steg mot Prototype Asset utan att felaktigt lova produktionsklarhet
+### T05B — Asset Request Package
 
-**Automatiskt underkänt om:**
+**Prompt:** Skapa ett överlämningspaket till en separat Game Graphics Creator för isometriska tiles och props.
 
-- konceptarket kallas rent tileset, texture atlas eller Production Ready
-- GPT:n påstår att bilden kan importeras som exakt grid utan teknisk kontroll
+**Godkänt:** Paketet innehåller brief, maskinläsbar spec, style guide och validation criteria. Det definierar canvas, footprint, anchor, overflow, atlas, lokalisering och separata sheets där slicingkraven skiljer sig. Huvudleveransen är specifikation, inte genererad bild.
 
-**Prioritet:** high
+### T05C — Granska Asset Delivery Package
 
-### T05B — Rent Prototype Tile Sheet
+**Prompt:** Jämför levererade grafikfiler och manifest med ursprunglig request package och skapa en revisionslista.
 
-> Skapa ett rent isometriskt prototyptilesheet för SpriteKit utifrån en fastställd science-fiction-stil. Det ska gå att dela upp programmatiskt i tiles.
+**Godkänt:** GPT:n verifierar mätbara krav, skiljer visuell bedömning från teknisk kontroll, använder Passed/Failed/Not verified/Not applicable och blockerar Production Ready vid obligatoriska brister.
 
-**Förväntat beteende:**
+### T05D — Deterministiska placeholders
 
-- klassificerar leveransen som `Tile Sheet` och `Prototype Asset`
-- fastställer eller dokumenterar tile width, tile height, grid, rader, kolumner, spacing och transparens
-- kräver att själva sheetet saknar rubriker, kod, ramar, vattenstämplar och dekorativ bakgrund
-- separerar ground tiles, walls/edges och props när deras geometri eller fotpunkt skiljer sig
-- definierar fotpunkt/origin, ljusriktning och regel för skuggor
-- märker osäkra egenskaper som `Inte verifierad` i stället för att anta exakthet
+**Prompt:** Skapa placeholders för att testa isometrisk rörelse, kollision och kamera före slutgrafik.
 
-**Automatiskt underkänt om:**
-
-- leveransen är ett presentationsark med inbyggda rubriker eller instruktioner
-- cellmått eller grid saknas men resultatet ändå kallas tekniskt användbart tileset
-- genererad bild felaktigt påstås vara exakt, sömlös eller Production Ready utan validering
-
-**Prioritet:** critical
-
-### T05C — Teknisk assetvalidering
-
-> Granska den bifogade tilesetbilden som tekniskt asset. Redovisa vad som är godkänt, underkänt och inte verifierat. Anta inte att något är korrekt bara för att bilden ser bra ut.
-
-**Förväntat beteende:**
-
-- klassificerar först assettyp och påstådd mognadsnivå
-- använder statusarna `Godkänd`, `Underkänd`, `Inte verifierad` och `Ej tillämplig` per kontroll
-- granskar minst dimension, grid, alpha, presentationstext, cellövertramp, perspektiv, ljus, fotpunkt och sömlöshet där relevant
-- anger kontrollmetod eller vilket underlag som saknas
-- låter varje kritiskt `Underkänd` eller `Inte verifierad` blockera `Production Ready`
-- skiljer observerbara bildfel från sådant som kräver fil- eller scenverifiering
-
-**Automatiskt underkänt om:**
-
-- okontrollerade egenskaper markeras som godkända
-- estetisk kvalitet används som bevis för teknisk produktionskvalitet
-- konceptarket godkänns som rent tileset trots rubriker, kod, ram eller saknat grid
-
-**Prioritet:** critical
-
-### T05D — Production Candidate Package
-
-> Paketera ett validerat isometriskt tileset som en produktionskandidat för projektet. Inkludera de dokument och metadata som behövs för fortsatt kontroll och integration.
-
-**Förväntat beteende:**
-
-- klassificerar leveransen som `Production Candidate`, inte automatiskt `Production Ready`
-- skapar eller specificerar ren teknisk output, manifest, README, valideringsrapport och SpriteKit-integrationsguide
-- dokumenterar tilemått, filer, texture names, pivot/fotpunkt, atlasgrupp, användning och kvarstående manuella kontroller
-- använder reproducerbar efterbearbetning när exakt canvas, grid, alpha eller export krävs
-- redovisar käll- och licensstatus när externa eller genererade assets ingår
-- blockerar uppgradering till Production Ready tills relevant scen- och integrationskontroll är genomförd
-
-**Automatiskt underkänt om:**
-
-- paketet endast består av en presenterad bild
-- manifest eller valideringsstatus saknas
-- GPT:n påstår att integration eller fysisk TV-läsbarhet är verifierad utan faktisk körning
-
-**Prioritet:** critical
+**Godkänt:** Placeholderfilerna är enkla, märkta och kompatibla med framtida dimensioner, footprint, anchor och naming.
 
 ### T05E — SpriteKit-integration
 
-> Integrera produktionskandidaten i ett SpriteKit-projekt och beskriv vad som måste verifieras innan assetet får status Production Ready.
+**Prompt:** Integrera godkända runtime-assets och manifest i projektet.
 
-**Förväntat beteende:**
-
-- anger fil-/atlasstruktur, target membership och konsekventa texture names
-- beskriver `SKTextureAtlas`, laddning och eventuell tilemap- eller nodbaserad användning
-- hanterar `anchorPoint`/fotpunkt, z-position eller depth sorting och separata kollisionsformer
-- beskriver konkreta kontroller i relevant scen, skala och TV-avstånd
-- skiljer statisk granskning från faktisk Xcode-build, scenkörning och Apple TV-test
-- ger endast status `Production Ready` när alla relevanta kontroller faktiskt är dokumenterat godkända
-
-**Automatiskt underkänt om:**
-
-- SpriteKit-import beskrivs utan atlas-/namngivnings- eller pivotstrategi
-- assetet märks Production Ready utan verifierad laddning och scenkontroll
-- GPT:n fabricerar Xcode-, simulator-, controller- eller fysisk Apple TV-testning
-
-**Prioritet:** critical
+**Godkänt:** GPT:n hanterar atlaser, target membership, texture identifiers, anchors, collision, depth sorting, animation, filtering och ärlig testredovisning.
 
 ### T06 — Plattformsspel
 

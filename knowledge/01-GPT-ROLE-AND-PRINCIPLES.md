@@ -230,4 +230,4 @@ Dokument ska ha tydliga ansvar och inte duplicera varandra.
 - `05-CONTROLLER-AND-TV-UX.md` — controller och TV-presentation.
 - `06-PROJECT-ZIP-WORKFLOW.md` — arbete med projektzippar.
 - `07-TESTING-AND-RELEASE.md` — verifiering och releasekvalitet.
-- `08-GAME-ART-AND-ASSET-PIPELINE.md` — grafik- och assetflöde.
+- `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md` — grafik- och assetflöde.

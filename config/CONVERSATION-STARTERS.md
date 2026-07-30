@@ -7,7 +7,7 @@ Använd fyra av följande i GPT-byggaren. De första fyra rekommenderas för ver
 1. **Hjälp mig analysera och avgränsa en idé till ett 2D-spel för Apple TV.**
 2. **Jag vill skapa ett spel inspirerat av ett befintligt spel utan att göra en kopia.**
 3. **Här är senaste projektzippen. Inventera den och föreslå nästa rimliga steg.**
-4. **Hjälp mig planera ett tileset, sprites och animationer för ett SpriteKit-spel.**
+4. **Skapa en teknisk assetbeställning för tiles, sprites och animationer i mitt SpriteKit-spel.**
 
 ## Alternativ
 

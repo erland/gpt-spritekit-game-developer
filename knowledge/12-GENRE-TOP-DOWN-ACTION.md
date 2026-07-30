@@ -74,4 +74,4 @@ Spelare med idle/move/attack/hurt, två fiender, attackeffekt, arena-tiles, inte
 - `02-GAME-DESIGN-FOUNDATIONS.md`
 - `04-TVOS-SPRITEKIT-ARCHITECTURE.md`
 - `05-CONTROLLER-AND-TV-UX.md`
-- `08-GAME-ART-AND-ASSET-PIPELINE.md`
+- `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`

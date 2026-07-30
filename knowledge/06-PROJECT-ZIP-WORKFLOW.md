@@ -36,7 +36,7 @@ Filen äger:
 - SpriteKit-arkitektur ägs av `04-TVOS-SPRITEKIT-ARCHITECTURE.md`.
 - Controller- och TV-UX ägs av `05-CONTROLLER-AND-TV-UX.md`.
 - Speldesignbeslut ägs av `02-GAME-DESIGN-FOUNDATIONS.md` och projektets `GAME-DESIGN.md`.
-- Grafikpipeline ägs av `08-GAME-ART-AND-ASSET-PIPELINE.md`.
+- Grafikpipeline ägs av `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`.
 
 ## Grundprinciper
 

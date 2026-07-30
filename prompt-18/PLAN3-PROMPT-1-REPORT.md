@@ -6,7 +6,7 @@ Prompt 1 inför modell och krav för att skilja visuell presentation från tekni
 
 ## Genomfört
 
-- Infört fyra mognadsnivåer i `knowledge/08-GAME-ART-AND-ASSET-PIPELINE.md`:
+- Infört fyra mognadsnivåer i `knowledge/08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`:
   - Design Sheet
   - Prototype Asset
   - Production Candidate

@@ -4,7 +4,7 @@ Detta paket används för att skapa en specialiserad GPT för speldesign och 2D-
 
 ## Aktuell version
 
-`1.0.0-rc9`
+`1.0.0-rc12`
 
 Detta är en releasekandidat. Allt som kan verifieras statiskt och genom lokalt fil-/zip-arbete är genomfört. GPT Preview samt Xcode-, controller- och fysisk Apple TV-verifiering återstår.
 
@@ -20,7 +20,7 @@ Detta är en releasekandidat. Allt som kan verifieras statiskt och genom lokalt 
 - `PLAN.md` — ursprunglig `[PLAN]`.
 - `PLAN2.md` — genomförandet uppdelat i promptar.
 - `PLAN3.md` — plan och status för produktionssäker grafik- och assetpipeline.
-- `prompt-18/`–`prompt-20/` — genomföranderapporter för `[PLAN3 Prompt 1–3]`.
+- `prompt-18/`–`prompt-24/` — genomföranderapporter för PLAN3, preflight, language consistency, and the T05B refinement.
 - `DECISIONS.md` — fastställda beslut.
 - `OPEN-QUESTIONS.md` — kontrollfrågor och beslut.
 - `PROJECT-STATUS.md` — aktuell arbetsstatus.
@@ -33,7 +33,7 @@ Detta är en releasekandidat. Allt som kan verifieras statiskt och genom lokalt 
 
 ## Status
 
-`[PLAN2 Prompt 15]` är genomförd i den utsträckning denna miljö tillåter. `[PLAN3 Prompt 1–3]` är genomförda. Nästa interna steg är `[PLAN3 Prompt 4]`; extern GPT Preview- och Xcode-verifiering återstår.
+`[PLAN2 Prompt 15]` är genomförd i den utsträckning denna miljö tillåter. `[PLAN3 Prompt 1–4]` and the T05B refinement are implemented; external GPT Preview and Xcode verification remain.
 
 ## Git och CI
 
@@ -41,10 +41,14 @@ Kunskapsbasen och referensprojektet innehåller nu stöd för projektspecifik `.
 
 ## Buildergränser
 
-- Slutlig instruktion: 7 707 av 8 000 tecken.
+- Slutlig instruktion: 7 846 av 8 000 Unicode-tecken.
 - Knowledge-filer: 16 av 20.
 - Se `prompt-17/INSTRUCTION-COMPACTION-REPORT.md` för täckningskontroll.
 
 ## Language convention
 
 Chat responses may follow the user's language, but technical project artifacts are written in English. User-facing game text may be localized to Swedish or another explicitly requested language.
+
+## Graphics responsibility in rc12
+
+This GPT plans, specifies, reviews, and integrates game assets. Polished sprite and tileset production is delegated to a separate Game Graphics Creator through a standardized Asset Request Package.

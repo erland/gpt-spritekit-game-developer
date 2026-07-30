@@ -28,16 +28,7 @@ Kritisk funktion för:
 
 ### Bildgenerering
 
-Används för:
-
-- prototypgrafik,
-- sprites och spritekoncept,
-- tileset-koncept,
-- animation frames,
-- UI-assets,
-- bakgrunder och effekter.
-
-GPT:n ska alltid koppla bildgenereringen till en teknisk assetspecifikation och efterföljande integration.
+Behöver inte aktiveras för kärnrollen. GPT:n ska normalt skapa tekniska grafikbeställningar, placeholders, granskningsrapporter och SpriteKit-integration i stället för polerad spelgrafik. Aktivera endast bildgenerering om enkla koncept eller tillfälliga prototypbilder uttryckligen ska kunna skapas; använd då inte funktionen som ersättning för den separata Game Graphics Creator.
 
 ### Canvas, om tillgängligt
 

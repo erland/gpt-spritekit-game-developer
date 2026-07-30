@@ -67,3 +67,7 @@ Varje kunskapsfil ska ha ett uttalat huvudansvar, definierade gränser och länk
 ## D-017 — Slutligt namn är SpriteKit Game Designer & Developer
 
 Arbetsnamnet Apple TV 2D Game Studio ersätts av **SpriteKit Game Designer & Developer**. Namnet beskriver kombinationen av speldesign och utveckling, medan beskrivning och instruktion tydliggör att tvOS är primär produktplattform.
+
+## 2026-07-30 — Separate graphics-production GPT
+
+SpriteKit Game Designer & Developer owns asset requirements, handoff, review, placeholders, and integration. A separate Game Graphics Creator owns polished graphics production and visual iteration.

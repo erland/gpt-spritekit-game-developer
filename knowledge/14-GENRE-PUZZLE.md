@@ -74,4 +74,4 @@ Brädtiles, mål, flyttbara objekt, fokusmarkör, success/failure-feedback och s
 - `02-GAME-DESIGN-FOUNDATIONS.md`
 - `04-TVOS-SPRITEKIT-ARCHITECTURE.md`
 - `05-CONTROLLER-AND-TV-UX.md`
-- `08-GAME-ART-AND-ASSET-PIPELINE.md`
+- `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`

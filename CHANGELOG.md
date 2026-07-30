@@ -1,5 +1,33 @@
 # Changelog
 
+## 1.0.0-rc12 — Graphics responsibility split
+
+- Refocused SpriteKit Game Designer & Developer on asset planning, technical specification, handoff, review, placeholders, and SpriteKit integration.
+- Replaced the graphics-generation pipeline knowledge file with `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`.
+- Added a standardized Asset Request Package and expected Asset Delivery Package contract.
+- Removed polished game-graphics generation from the GPT's default responsibility and made image generation optional rather than core.
+- Reworked T05A–T05E to test asset planning, handoff, review, placeholders, and integration.
+- Added `prompt-25/GRAPHICS-RESPONSIBILITY-SPLIT.md`.
+
+## 1.0.0-rc11 — Main-instruction asset-sheet guardrail
+
+- Added a compact, explicit rule to `config/FINAL-INSTRUCTIONS.md` for classifying tiles, multi-tile structures, props, interactive objects, and effects.
+- Prohibited claims that an image is grid-sliceable or `Production Ready` unless cell layout, footprint, anchor, visual overflow, and manifest data are explicitly defined or verified.
+- Kept the detailed workflow in `knowledge/08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md` while making the essential behavior globally authoritative.
+- Recompacted the instruction to remain below the 8,000-character Builder limit.
+- Added `prompt-24/MAIN-INSTRUCTION-ASSET-GUARDRAIL.md`.
+
+## 1.0.0-rc10 — T05B practical asset-sheet refinement
+
+- Refined T05B after reviewing real generated prototype sheets.
+- Distinguished Ground Tile, Wall/Edge Tile, Multi-tile Structure, Prop, Interactive Object, Animated Effect, and Signage.
+- Separated canvas size, logical footprint, anchor point, visual bounds, and visual overflow.
+- Required machine-readable manifests or deterministic cell maps for programmatic slicing.
+- Required separate sheets or atlases when geometry, anchor, animation, or slicing rules are incompatible.
+- Added explicit failure conditions for mixed unclassified assets and baked-in headings, captions, row separators, or guide lines.
+- Clarified that an image alone cannot prove exact grid placement, alpha, dimensions, or slicing reliability.
+- Added `prompt-23/T05B-PRACTICAL-TEST-REFINEMENT.md`.
+
 ## 1.0.0-rc9 — Technical language and localization boundary
 
 - Enforced English for code, identifiers, code comments, tests and technical project documentation.
@@ -176,11 +204,22 @@
 
 # Changelog
 
+## 1.0.0-rc10 — T05B practical asset-sheet refinement
+
+- Refined T05B after reviewing real generated prototype sheets.
+- Distinguished Ground Tile, Wall/Edge Tile, Multi-tile Structure, Prop, Interactive Object, Animated Effect, and Signage.
+- Separated canvas size, logical footprint, anchor point, visual bounds, and visual overflow.
+- Required machine-readable manifests or deterministic cell maps for programmatic slicing.
+- Required separate sheets or atlases when geometry, anchor, animation, or slicing rules are incompatible.
+- Added explicit failure conditions for mixed unclassified assets and baked-in headings, captions, row separators, or guide lines.
+- Clarified that an image alone cannot prove exact grid placement, alpha, dimensions, or slicing reliability.
+- Added `prompt-23/T05B-PRACTICAL-TEST-REFINEMENT.md`.
+
 ## 0.7.0 — [PLAN2 Prompt 7]
 
 ### Tillagt
 
-- `knowledge/08-GAME-ART-AND-ASSET-PIPELINE.md`
+- `knowledge/08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`
   - art direction och prioriterad assetplan,
   - separata pipelines för pixel art och högupplöst 2D,
   - tekniska assetspecifikationer och bildgenereringsflöde,

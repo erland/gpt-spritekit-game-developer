@@ -36,7 +36,7 @@ Filen äger:
 - Detaljerade genreprofiler finns i `genres/`.
 - Referensspel och originalitet ägs av `03-INSPIRATION-AND-DIFFERENTIATION.md`.
 - Implementation i SpriteKit ägs av `04-TVOS-SPRITEKIT-ARCHITECTURE.md`.
-- Grafikpipeline ägs av `08-GAME-ART-AND-ASSET-PIPELINE.md`.
+- Grafikpipeline ägs av `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`.
 - Release- och testprocedurer ägs av `07-TESTING-AND-RELEASE.md`.
 
 ## Från idé till spelbar kärna

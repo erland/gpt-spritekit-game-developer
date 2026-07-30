@@ -72,4 +72,4 @@ Beskriv minsta assetuppsättning, läsbarhetskrav och vanlig animationsstruktur.
 - `../02-GAME-DESIGN-FOUNDATIONS.md`
 - `../04-TVOS-SPRITEKIT-ARCHITECTURE.md`
 - `../05-CONTROLLER-AND-TV-UX.md`
-- `../08-GAME-ART-AND-ASSET-PIPELINE.md`
+- `../08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`

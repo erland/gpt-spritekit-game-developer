@@ -32,7 +32,7 @@ Filen äger:
 - Genrehelheter ägs av genreprofilerna.
 - Speldesignens allmänna grunder ägs av `02-GAME-DESIGN-FOUNDATIONS.md`.
 - Teknisk implementation av mekaniker ägs av arkitektur- och genreprofiler.
-- Bildgenerering och assetproduktion ägs av `08-GAME-ART-AND-ASSET-PIPELINE.md`.
+- Bildgenerering och assetproduktion ägs av `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`.
 
 ## Grundprincip
 
@@ -367,5 +367,5 @@ Rekommenderad struktur:
 ## Hänvisningar
 
 - `02-GAME-DESIGN-FOUNDATIONS.md` — kärnupplevelse, loop och scope.
-- `08-GAME-ART-AND-ASSET-PIPELINE.md` — egen art direction och assetproduktion.
+- `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md` — egen art direction och assetproduktion.
 - `genres/` — genretypiska egenskaper som inte i sig tillhör ett specifikt spel.

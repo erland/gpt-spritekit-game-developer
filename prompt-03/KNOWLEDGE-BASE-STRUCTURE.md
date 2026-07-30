@@ -37,7 +37,7 @@ knowledge/
 ├── 05-CONTROLLER-AND-TV-UX.md
 ├── 06-PROJECT-ZIP-WORKFLOW.md
 ├── 07-TESTING-AND-RELEASE.md
-├── 08-GAME-ART-AND-ASSET-PIPELINE.md
+├── 08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md
 └── genres/
     ├── 00-GENRE-INDEX.md
     ├── GENRE-PLATFORMER.md
@@ -243,7 +243,7 @@ Ska inte innehålla:
 - fullständig arkitekturguide,
 - genrespecifik spelbalans utöver hänvisningar.
 
-### `08-GAME-ART-AND-ASSET-PIPELINE.md`
+### `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`
 
 **Huvudansvar:** Planering, generering och integration av spelgrafik.
 
@@ -390,7 +390,7 @@ Alla rubriker behöver inte användas i varje fil. Strukturen ska anpassas utan 
 2. relevant genreprofil
 3. `04-TVOS-SPRITEKIT-ARCHITECTURE.md`
 4. `05-CONTROLLER-AND-TV-UX.md`
-5. `08-GAME-ART-AND-ASSET-PIPELINE.md` vid grafikbehov
+5. `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md` vid grafikbehov
 
 ### Spel inspirerat av befintligt spel
 
@@ -416,7 +416,7 @@ Alla rubriker behöver inte användas i varje fil. Strukturen ska anpassas utan 
 
 ### Grafikarbete
 
-1. `08-GAME-ART-AND-ASSET-PIPELINE.md`
+1. `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`
 2. relevant genreprofil
 3. `04-TVOS-SPRITEKIT-ARCHITECTURE.md` för atlas och integration
 4. `05-CONTROLLER-AND-TV-UX.md` för TV-läsbarhet
@@ -432,7 +432,7 @@ Exempel:
 - kärnloop ägs av `02-GAME-DESIGN-FOUNDATIONS.md`,
 - controllerinput ägs av `05-CONTROLLER-AND-TV-UX.md`,
 - texture atlas-teknik ägs av `04-TVOS-SPRITEKIT-ARCHITECTURE.md`,
-- assetnamngivning ägs av `08-GAME-ART-AND-ASSET-PIPELINE.md`,
+- assetnamngivning ägs av `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md`,
 - zip-städning ägs av `06-PROJECT-ZIP-WORKFLOW.md`,
 - testredovisning ägs av `07-TESTING-AND-RELEASE.md` och är dessutom obligatorisk i huvudinstruktionen.
 
@@ -479,7 +479,7 @@ Vid ändring ska följande kontrolleras:
 | Controller och TV-UX | `05-CONTROLLER-AND-TV-UX.md` | Genreprofiler |
 | Projektzip och filstädning | `06-PROJECT-ZIP-WORKFLOW.md` | `07-TESTING-AND-RELEASE.md` |
 | Tester och releasekvalitet | `07-TESTING-AND-RELEASE.md` | Genreprofiler |
-| Grafik och assetpipeline | `08-GAME-ART-AND-ASSET-PIPELINE.md` | Genreprofiler |
+| Grafik och assetpipeline | `08-GAME-ASSET-REQUIREMENTS-AND-INTEGRATION.md` | Genreprofiler |
 | Genrespecifik design | respektive genreprofil | `02-GAME-DESIGN-FOUNDATIONS.md` |
 | Isometrisk specialdesign | `GENRE-ISOMETRIC-ADVENTURE.md` | Arkitektur och assetpipeline |
 | Lokal multiplayer | `GENRE-LOCAL-MULTIPLAYER.md` | Controller och arkitektur |
