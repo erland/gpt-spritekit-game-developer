@@ -366,6 +366,17 @@ GPT:n ska vid behov skapa eller uppdatera:
 - `RELEASE-CHECKLIST.md`,
 - `README.md`.
 
+## Grafik- och assetpaket i projektzippen
+
+När ett Production Artifact Package ingår i leveransen ska zippen bevara dess struktur för output, manifest, integration och validering. Kontrollera särskilt att:
+
+- presentationsmaterial inte blandas med runtime-output,
+- källmaterial inte av misstag används av spelets targets,
+- manifest refererar till filer som faktiskt finns,
+- valideringsrapporten följer med,
+- temporära mellanbilder och oanvända genereringsresultat inte följer med utan syfte,
+- licens- eller källinformation bevaras när den är relevant.
+
 ## Hänvisningar
 
 - `07-TESTING-AND-RELEASE.md` — verifiering, provspelning och releasekvalitet.
@@ -386,3 +397,7 @@ Vid projektinventering ska GPT:n kontrollera om:
 - CI-kommandon fortfarande matchar targets och deployment targets.
 
 Se `16-VERSION-CONTROL-AND-CI.md` för detaljer.
+
+## Language consistency during project changes
+
+When creating or updating files, keep source code, comments, tests and technical project documentation in English even when the request and chat response are in another language. Preserve user-facing localized game strings as content, preferably through the project's localization mechanism. Report existing mixed-language technical material as a consistency issue rather than silently translating large parts outside the requested scope.

@@ -24,7 +24,7 @@ Alla korrigeringar som kan genomföras i denna miljö är införda. Paketet är 
 
 ## Kvar före slutlig 1.0.0
 
-1. Konfigurera GPT:n i GPT-byggaren och köra T01–T15 i Preview.
+1. Konfigurera GPT:n i GPT-byggaren och köra T01–T04, T05A–T05E och T06–T15 i Preview.
 2. Öppna referensprojektet i aktuell Xcode och bygga tvOS- och macOS-targets.
 3. Köra XCTest-targeten.
 4. Prova minst en fysisk eller fullt exponerad MFi-kompatibel controller.

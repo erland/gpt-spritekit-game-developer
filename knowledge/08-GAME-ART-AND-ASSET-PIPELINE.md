@@ -139,19 +139,111 @@ Resultatet ska därefter kontrolleras för:
 - oönskade skuggor eller bakgrunder,
 - upphovsrättsligt eller designmässigt olämplig närhet till referensmaterial.
 
+
+## Asset Maturity Model
+
+Varje grafikleverans ska ha exakt en deklarerad mognadsnivå. Mognadsnivån beskriver teknisk och produktionsmässig status, inte hur visuellt imponerande bilden är.
+
+### A. Design Sheet
+
+Används för att utforska art direction, form, färg, material, silhuett och variation. Ett Design Sheet:
+
+- får innehålla rubriker, anteckningar, ramar, exempel och dekorativ presentation,
+- behöver inte följa exakt grid eller exportformat,
+- behöver inte kunna importeras direkt i spelet,
+- får aldrig beskrivas som ett rent tileset, sprite sheet eller produktionsasset.
+
+### B. Prototype Asset
+
+Används i en spelbar prototyp för att verifiera skala, läsbarhet, animation, interaktion eller teknik. Ett Prototype Asset:
+
+- ska vara tillräckligt strukturerat för faktisk import,
+- får ha dokumenterade kvalitetsbrister,
+- behöver inte vara fullt optimerat eller slutligt konsekvent,
+- ska märkas tydligt som prototypasset.
+
+### C. Production Candidate
+
+Är en kandidat för slutlig användning men ännu inte verifierad i hela produktionskedjan. Minimikrav:
+
+- exakta dimensioner och eventuell grid,
+- korrekt transparens, marginal och cellplacering,
+- definierad pivot, origin eller fotpunkt,
+- konsekvent perspektiv, skala, palett och ljusriktning,
+- dokumenterad namngivning och avsedd atlas,
+- definierade kontroller för tile-skarvar eller animation frames.
+
+Ett ouppfyllt eller inte verifierat obligatoriskt krav blockerar klassificering som Production Ready.
+
+### D. Production Ready
+
+Får endast användas när:
+
+- alla obligatoriska tekniska och visuella kontroller är godkända,
+- relevant SpriteKit-import och integration faktiskt har verifierats,
+- assetmanifest och eventuell atlasmetadata stämmer,
+- assetet har testats i relevant scen, zoom och TV-avstånd,
+- kvarstående manuella kontroller är avslutade eller uttryckligen accepterade.
+
+GPT:n får inte använda `Production Ready` baserat enbart på visuell bedömning eller en lyckad bildgenerering.
+
+## Asset Type Classification
+
+Klassificera leveransen som en eller flera av följande typer innan specifikation eller generering:
+
+- Design Sheet
+- Individual Sprite
+- Tile Sheet
+- Sprite Sheet
+- Animation Sheet
+- UI Sheet
+- Icon Sheet
+- Background
+- Parallax Layer
+- VFX Sheet
+- Texture Atlas
+- Asset Manifest
+- Import/Integration Package
+
+Assettyp och mognadsnivå är separata fält. Exempel: `Tile Sheet / Prototype Asset` eller `Design Sheet / Design Sheet`. Ett Design Sheet får inte användas som synonym för Tile Sheet.
+
+## Presentation kontra produktion
+
+När användaren ber om exempelvis ett tileset eller sprite sheet ska GPT:n avgöra vilken leverans som avses:
+
+1. presentationsark för att fastställa stil,
+2. rent prototypsheet för speltest,
+3. produktionskandidat,
+4. komplett och verifierad produktionsleverans.
+
+Om avsikten är oklar:
+
+- rekommendera Design Sheet när art direction inte är fastställd,
+- rekommendera Prototype Asset när mekanik eller teknik ska provas,
+- rekommendera Production Candidate först när art direction och tekniska krav är beslutade.
+
+När ett rent tekniskt sheet efterfrågas får själva assetbilden inte innehålla:
+
+- rubriker eller etiketter,
+- kod eller instruktionstext,
+- dekorativ ram eller mockupbakgrund,
+- vattenstämpel,
+- element utanför definierad canvas eller cellstruktur.
+
+Presentation och teknisk export ska vid behov levereras som separata filer.
+
 ## Rekommenderat arbetsflöde
 
-### Steg 1 — Fastställ produktionsfas
+### Steg 1 — Klassificera assettyp och mognadsnivå
 
-Klassificera behovet som ett av följande:
+Dokumentera minst:
 
-- **Konceptutforskning:** hitta en visuell riktning.
-- **Prototypasset:** verifiera spelmekanik eller teknik.
-- **Produktionsasset:** avsedd att användas i slutversionen.
-- **Integrationsarbete:** föra in eller ersätta assets i projektet.
-- **Kvalitetsgranskning:** kontrollera befintlig grafik och pipeline.
+- **Assettyp:** exempelvis Design Sheet, Tile Sheet eller Animation Sheet.
+- **Mognadsnivå:** Design Sheet, Prototype Asset, Production Candidate eller Production Ready.
+- **Syfte:** vilket design-, gameplay- eller integrationsproblem leveransen ska lösa.
+- **Leveransform:** presentationsbild, rent PNG-sheet, individuella PNG-filer, atlas eller integrationspaket.
 
-Detta avgör hur mycket tid som ska läggas på detalj, variation, teknisk specifikation och efterbearbetning.
+Klassificeringen ska stå i assetspecifikationen, assetplanen och leveranssammanfattningen. Om användaren använder ordet ”tileset” men efterfrågar ett inspirationsark ska leveransen märkas `Design Sheet`, inte produktionsklart tileset.
 
 ### Steg 2 — Läs projektets visuella källor
 
@@ -209,21 +301,58 @@ Prioritera assets som krävs för nästa spelbara utsnitt. En asset ska inte ska
 
 ### Steg 5 — Skapa en teknisk assetspecifikation
 
-Specifikationen ska vara tillräckligt exakt för att flera genereringar ska kunna bli kompatibla. Den bör ange:
+Specifikationen ska skapas före generering av Prototype Asset, Production Candidate eller Production Ready. För ett rent Design Sheet kan en förenklad art-direction-specifikation räcka.
 
-- canvasmått,
-- motivets förväntade bounding box,
-- transparent eller ogenomskinlig bakgrund,
-- färgrymd och filformat,
-- pixeltäthet och skalningsprincip,
-- pivotpunkt eller fotpunkt,
-- säker marginal,
-- riktning som figuren tittar åt,
-- frameordning,
-- ljusriktning,
-- skuggans placering,
-- exportnamn,
-- hur asseten ska beskäras eller packas.
+Obligatoriska fält där de är relevanta:
+
+| Fält | Krav |
+|---|---|
+| Asset-ID och namn | Stabil identifierare och exportnamn |
+| Assettyp | Klassificering enligt denna fil |
+| Mognadsnivå | A–D med tydligt namn |
+| Funktion | Vad assetet kommunicerar eller möjliggör i spelet |
+| Perspektiv | Side view, top-down, isometriskt etc. |
+| Canvasmått | Exakt pixelbredd och höjd |
+| Cellstruktur | Rader, kolumner, cellmått, spacing och marginal |
+| Motivets bounds | Tillåten yta och eventuell överhängsregel |
+| Bakgrund/alpha | Transparent eller ogenomskinlig; tillåten alfabehandling |
+| Filformat/färgrymd | Normalt PNG/RGBA och projektets färgrymd |
+| Skalningsprincip | Pixel art/nearest neighbour eller filtrerad högupplöst 2D |
+| Pivot/origin/fotpunkt | Exakt koordinat eller normaliserad anchor point |
+| Perspektiv och skala | Kameravinkel, objektstorlek och proportioner |
+| Ljus/skugga | Riktning, hårdhet och om skugga är inbakad |
+| Kollisionsrepresentation | Visuell bounds, separat form eller tile footprint |
+| Animation | Tillstånd, riktningar, frameantal, ordning, fps och loop |
+| Namngivning | Fil- och texturekonvention |
+| Atlasgrupp | Avsedd `SKTextureAtlas` eller fristående asset |
+| SpriteKit-användning | Nodtyp, anchor point, tilemap eller animation |
+| TV-läsbarhet | Minsta visningsstorlek, kontrast och gameplayzoom |
+| Godkännandekriterier | Vad som krävs för nästa mognadsnivå |
+
+### Tillägg för isometriska assets
+
+Ange dessutom:
+
+- tile width och tile height,
+- diamantens footprint och hörnkoordinater,
+- baslinje/fotpunkt där objektet möter tileplanet,
+- tillåten höjd och överhäng ovanför cellen,
+- depth sorting-regel, exempelvis baslinje eller tilekoordinat,
+- om skuggan följer assetet eller renderas separat,
+- vilka assets som är ground tiles, edges/walls respektive props.
+
+### Minsta assetspecifikation för ett rent sheet
+
+GPT:n får inte börja generera ett rent tekniskt sheet innan följande åtminstone är fastställt eller tydligt antaget:
+
+- assettyp och mognadsnivå,
+- pixelmått och cellstruktur,
+- transparenskrav,
+- perspektiv och ljusriktning,
+- pivot/fotpunkt,
+- vilka objekt eller frames som ska finnas,
+- förbud mot text, ram, kod och presentationsdekor,
+- avsedd SpriteKit-import.
 
 ### Steg 6 — Generera i små, kontrollerbara grupper
 
@@ -255,19 +384,142 @@ Kontrollera och korrigera vid behov:
 
 För produktionsassets bör processen vara reproducerbar och dokumenterad. Manuell efterbearbetning ska redovisas så att senare assets kan matchas.
 
+#### Programmatisk efterbearbetning
+
+När exakta mått, grid, transparens eller konsekvens krävs ska GPT:n föredra en reproducerbar bearbetningskedja framför enbart manuell beskärning. Den kan exempelvis:
+
+1. läsa källbilder och validera format, färgläge och alfakanal,
+2. frilägga eller maskera bakgrund när det är tekniskt säkert,
+3. beskära efter definierad bounding box eller fotpunkt,
+4. normalisera canvas och placering,
+5. skala med rätt interpoleringsmetod,
+6. placera individuella assets i ett exakt rutnät,
+7. kontrollera att inget motiv går över sin cell,
+8. exportera separata PNG-filer och/eller ett sheet,
+9. generera manifest med koordinater, mått och ankare,
+10. skapa en valideringsrapport.
+
+För pixel art ska nearest-neighbor användas vid heltalsskalning. För högupplöst 2D ska vald resampling dokumenteras. Automatisk bakgrundsborttagning får inte användas okritiskt när den riskerar att skada halvtransparenta kanter, skuggor eller effekter.
+
+Programmatisk bearbetning får inte beskrivas som lyckad utan att outputfilerna faktiskt har öppnats eller kontrollerats maskinellt.
+
+## Valideringsmodell
+
+Varje Production Candidate och varje påstådd Production Ready-leverans ska ha en valideringsrapport. Varje kontrollpunkt får exakt en status:
+
+- **Godkänd** — kontrollerad med angiven metod och uppfyller kravet.
+- **Underkänd** — kontrollerad och uppfyller inte kravet.
+- **Inte verifierad** — kontrollen har inte kunnat utföras eller underlaget är otillräckligt.
+- **Ej tillämplig** — kontrollen gäller inte assettypen; motivering krävs.
+
+GPT:n får inte tolka `Inte verifierad` som godkänd. Ett obligatoriskt krav med status `Underkänd` eller `Inte verifierad` blockerar `Production Ready`.
+
+### Minsta valideringsområden
+
+Beroende på assettyp ska rapporten omfatta relevanta delar av:
+
+- filformat, färgläge och alfakanal,
+- exakta pixelmått, grid, cellmarginal och spacing,
+- förekomst av text, ram, vattenstämpel eller presentationsbakgrund,
+- transparenta marginaler och motiv som går över cellgränser,
+- perspektiv, skala, palett och ljusriktning,
+- pivot, origin, fotpunkt och frame alignment,
+- tile-skarvar, hörn- och kantkombinationer,
+- frameordning och animationsstabilitet,
+- namn, atlasgrupp och manifestkonsistens,
+- texture filtering och skalning,
+- laddning i SpriteKit,
+- gameplayzoom, TV-läsbarhet och scenkontext,
+- minne, atlasstorlek eller annan relevant prestandabudget.
+
+### Valideringsmetod
+
+Rapporten ska ange hur varje kontroll utfördes, exempelvis:
+
+- programmatisk kontroll av bilddimensioner eller alpha,
+- pixeljämförelse av tilekanter,
+- visuell granskning av ett kontaktark,
+- SpriteKit-importtest,
+- skärmbild från relevant scen,
+- manuell provning på macOS eller Apple TV.
+
+Visuell bedömning ensam räcker inte för krav som kan kontrolleras exakt, såsom mått, grid eller filformat.
+
+## Production Artifact Package
+
+En produktionsinriktad grafikleverans ska, när omfattningen motiverar det, paketeras som ett sammanhållet **Production Artifact Package**. Paketet ska inte bara innehålla en bild utan de artefakter som krävs för att förstå, verifiera, importera och vidareutveckla leveransen.
+
+Rekommenderat innehåll:
+
+```text
+<asset-package>/
+├── README.md
+├── source/                  # valfritt, redigerbara eller genererade källor
+├── output/
+│   ├── individual/          # separata PNG-filer när lämpligt
+│   └── sheets/              # rena sheets eller atlasunderlag
+├── manifest/
+│   ├── assets.json
+│   └── ASSET-MANIFEST.md
+├── integration/
+│   └── SPRITEKIT-IMPORT.md
+└── validation/
+    └── VALIDATION-REPORT.md
+```
+
+Paketets `README.md` ska minst ange:
+
+- assettyp och mognadsnivå,
+- syfte och versionsnummer,
+- vilka filer som är presentationsmaterial respektive teknisk output,
+- kända begränsningar,
+- hur output genererades eller efterbearbetades,
+- nästa manuella kontroll.
+
+### Manifest
+
+Manifestet ska för varje asset beskriva relevanta fält, exempelvis:
+
+- stabilt asset-id och filnamn,
+- assettyp och funktion,
+- mått och eventuell cellposition,
+- pivot/origin/fotpunkt,
+- collision hint eller logisk fotyta,
+- animation, frameindex och timing,
+- atlasgrupp,
+- filtering,
+- mognadsnivå och valideringsstatus.
+
+JSON-manifest ska använda ett dokumenterat schema eller åtminstone en stabil struktur. Markdown-manifestet ska vara läsbart för människor och får inte motsäga JSON-filen.
+
+### Källor och rättigheter
+
+När externa eller licensierade källor används ska paketet ange källa och licensvillkor. För genererade assets ska det dokumenteras att de är genererade och vilka projektspecifika referenser som användes. GPT:n ska inte hitta på licensstatus.
+
+### Leveransnivå
+
+Ett Design Sheet behöver normalt inte ett fullständigt Production Artifact Package. Ett Prototype Asset kan använda en förenklad variant. Production Candidate och Production Ready bör använda full struktur när flera filer, frames eller tiles ingår.
+
 ### Steg 8 — Integrera i SpriteKit
 
 Vid integration ska GPT:n:
 
-1. inventera befintlig assetstruktur,
-2. placera filer i konsekventa grupper,
-3. skapa eller uppdatera texture atlases där det är lämpligt,
-4. uppdatera referenser i kod och datafiler,
-5. ange texture filtering och skalningsprincip,
-6. definiera animationer på ett återanvändbart sätt,
-7. bevara spelobjektens logiska position när grafik byts,
-8. testa saknade eller felaktigt namngivna textures,
-9. dokumentera nya assets och beroenden.
+1. inventera befintlig assetstruktur och target membership,
+2. placera filer i konsekventa grupper utan att blanda källmaterial och runtime-output,
+3. skapa eller uppdatera `.atlas`-mappar eller Asset Catalogs där det är lämpligt,
+4. uppdatera referenser i kod och datafiler utan hårdkodade duplicerade namn,
+5. ange texture filtering, skalningsprincip och eventuell heltalsskalning,
+6. definiera animationer på ett återanvändbart sätt med dokumenterad frameordning och timing,
+7. mappa manifestets pivot/fotpunkt till `anchorPoint` eller separat presentationsnod,
+8. bevara spelobjektens logiska position och kollisionsmodell när grafik byts,
+9. testa saknade, dubbla och felaktigt namngivna textures,
+10. verifiera atlas- och texturestorlekar mot projektets budget,
+11. kontrollera att filer ingår i rätt tvOS- och macOS-targets,
+12. dokumentera nya assets, beroenden och importsteg.
+
+För tiles ska integrationen dessutom verifiera att tiledefinitioner, koordinater och rotations-/variantregler stämmer med manifestet. För animationer ska kod eller data inte anta ett frameantal som skiljer sig från output. För höga isometriska props ska grafisk nod, logisk fotpunkt, sorteringsnyckel och kollisionsyta kunna hanteras separat.
+
+En integration är inte verifierad bara för att PNG-filerna ligger i projektmappen. Minst laddning, referensupplösning och relevant scenpresentation ska provas innan kontrollen kan markeras `Godkänd`.
 
 ### Steg 9 — Granska i spelkontext
 

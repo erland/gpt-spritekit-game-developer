@@ -39,4 +39,4 @@ Ingen knowledge-fil behövde läggas till. De 16 befintliga filerna täcker reda
 
 ## Bedömning
 
-Funktionaliteten har inte avsiktligt minskats. Huvudinstruktionen innehåller fortfarande de regler som måste styra GPT:n i varje konversation. Knowledge-filerna innehåller den detaljerade tillämpningen. Faktisk beteendeekvivalens ska slutligen kontrolleras med T01–T15 i GPT Preview.
+Funktionaliteten har inte avsiktligt minskats. Huvudinstruktionen innehåller fortfarande de regler som måste styra GPT:n i varje konversation. Knowledge-filerna innehåller den detaljerade tillämpningen. Faktisk beteendeekvivalens ska slutligen kontrolleras med T01–T04, T05A–T05E och T06–T15 i GPT Preview.

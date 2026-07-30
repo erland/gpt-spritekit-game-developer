@@ -1,5 +1,56 @@
 # Changelog
 
+## 1.0.0-rc9 — Technical language and localization boundary
+
+- Enforced English for code, identifiers, code comments, tests and technical project documentation.
+- Preserved the user's language for chat responses.
+- Allowed explicitly requested Swedish or other localized user-facing game text.
+- Added guidance to separate game copy from technical code through localization resources.
+- Added regression test T20 for Swedish chat plus English technical artifacts and Swedish in-game strings.
+- Reconstructed and incorporated the PLAN3 Prompt 4 instruction gate that was described for rc8.
+- Added `prompt-21/PLAN3-PROMPT-4-REPORT.md` and `prompt-22/LANGUAGE-CONSISTENCY-REPORT.md`.
+
+## 1.0.0-rc7 — [PLAN3 Prompt 3]
+
+- Ersatt det breda grafiktestet T05 med fem avgränsade tester T05A–T05E.
+- Infört separata tester för Design Sheet, Prototype Tile Sheet, assetvalidering, Production Candidate Package och SpriteKit-integration.
+- Lagt till automatiska underkännandekriterier som hindrar presentationsark från att godkännas som rena tilesets.
+- Utökat maskinläsbara testfall med `failure_conditions`.
+- Uppdaterat testresultatmall, preflightmått och externa verifieringshänvisningar.
+- Testpaketet innehåller nu 19 testfall, varav 12 är kritiska.
+- Lagt till `prompt-20/PLAN3-PROMPT-3-REPORT.md`.
+- Huvudinstruktionen och antalet knowledge-filer är oförändrade.
+
+## 1.0.0-rc6 — [PLAN3 Prompt 2]
+
+- Infört valideringsmodell med fyra uttryckliga statusvärden.
+- Klargjort att `Inte verifierad` blockerar klassificering som Production Ready.
+- Definierat Production Artifact Package med README, output, manifest, integrationsguide och valideringsrapport.
+- Lagt till reproducerbar programmatisk efterbearbetning för canvas, grid, alpha, beskärning och export.
+- Utökat SpriteKit-integrationskraven för atlas, target membership, anchor point, animationer och scenverifiering.
+- Lagt till regler för assetmanifest, källor och licensstatus.
+- Lagt till `prompt-19/PLAN3-PROMPT-2-REPORT.md`.
+- Huvudinstruktionen och antalet knowledge-filer är oförändrade.
+
+## 1.0.0-rc5 — [PLAN3 Prompt 1]
+
+- Infört Asset Maturity Model med fyra nivåer i grafik- och assetkunskapen.
+- Infört separat Asset Type Classification.
+- Definierat presentation kontra teknisk produktion och rena sheet-krav.
+- Utökat teknisk assetspecifikation med grid, alpha, pivot, atlas, TV-läsbarhet och isometriska krav.
+- Klargjort att `Production Ready` kräver faktisk SpriteKit- och scenverifiering.
+- Lagt till `prompt-18/PLAN3-PROMPT-1-REPORT.md`.
+- Huvudinstruktionen och antalet knowledge-filer är oförändrade.
+
+## 1.0.0-rc4 — [PLAN3] tillagd
+
+- Lagt till `PLAN3.md` för produktionssäker grafik- och assethantering.
+- Definierat fyra mognadsnivåer: Design Sheet, Prototype Asset, Production Candidate och Production Ready.
+- Definierat assetklassificering, teknisk assetspecifikation, valideringsmodell och Production Artifact Package.
+- Planerat uppdelning av grafiktest T05 i T05A–T05E.
+- Planerat genomförandet i fem promptar utan att öka antalet knowledge-filer i detta steg.
+- Uppdaterat README och projektstatus.
+
 ## 1.0.0-rc3 — Instruktionsgräns och täckningskontroll
 
 - Kortat `config/FINAL-INSTRUCTIONS.md` från 10 635 till 7 707 Unicode-tecken.

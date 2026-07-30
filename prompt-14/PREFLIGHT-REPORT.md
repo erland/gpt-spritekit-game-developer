@@ -2,7 +2,7 @@
 
 ## Sammanfattning
 
-Den statiska preflighten är **godkänd med åtgärdspunkter**. Paketet har en tydlig roll, en konsekvent kunskapsbas med 15 filer, en separat slutlig instruktion och ett fungerande zip-arbetsflöde. Inga P0-blockerare identifierades.
+Den statiska preflighten är **godkänd med åtgärdspunkter**. Paketet har en tydlig roll, en konsekvent kunskapsbas med 16 filer, en separat slutlig instruktion och ett fungerande zip-arbetsflöde. Inga P0-blockerare identifierades.
 
 Version 1.0 bör dock inte betraktas som fullt verifierad förrän testpaketet har körts i GPT-byggarens Preview och referensprojektet har byggts i Xcode samt provats med controller och fysisk Apple TV.
 
@@ -25,11 +25,12 @@ Preflighten kontrollerade:
 
 ## Mätvärden
 
-- Kunskapsfiler: **15**
-- Totalt antal ord i kunskapsbasen: **17718**
-- Ord i slutlig instruktion: **1078**
-- Testfall: **15**
-- Kritiska testfall: **8**
+- Kunskapsfiler: **16**
+- Totalt antal ord i kunskapsbasen: **se `PREFLIGHT-METRICS.json`**
+- Slutlig instruktion: **7 707 Unicode-tecken**
+- Testfall: **19**
+- Kritiska testfall: **12**
+- Grafiktest: **T05A–T05E**
 
 ## Resultat per område
 
@@ -41,11 +42,11 @@ Preflighten kontrollerade:
 | Inspirationsspel | Godkänd | Abstraktion, differentiering och förbjudna kopieringsområden är tydliga. |
 | SpriteKit-grind | Godkänd | GPT:n ska kunna rekommendera prototyp, minskat scope eller annan teknik. |
 | Controller och TV-UX | Godkänd | Semantisk input, dead zones, fokus, frånkoppling och TV-läsbarhet täcks. |
-| Grafikpipeline | Godkänd med anmärkning | Omfattande stöd finns; assetspec före bildgenerering bör förstärkas i huvudinstruktionen. |
+| Grafikpipeline | Godkänd statiskt | Assetmognad, teknisk specifikation, validering och produktionspaket täcks; faktisk Preview-bildgenerering återstår. |
 | Zip-arbetsflöde | Godkänd med anmärkning | Praktiskt test godkänt; arkivsäkerhet bör lyftas in i huvudinstruktionen. |
 | Testredovisning | Godkänd | Tydlig skillnad mellan kört, granskat och ej verifierat. |
 | GPT-konfiguration | Godkänd | Namn, beskrivning, instruktion, manifest och capabilities finns. |
-| End-to-end Preview | Ej verifierad | Kräver faktisk konfiguration och körning av T01–T15. |
+| End-to-end Preview | Ej verifierad | Kräver faktisk konfiguration och körning av T01–T04, T05A–T05E och T06–T15. |
 | Xcode/Apple TV | Ej verifierad | Kräver Mac, Xcode, controller och fysisk Apple TV. |
 
 ## Kritiska styrkor
@@ -64,7 +65,7 @@ Inga rent strukturella P0-blockerare hittades. Följande måste däremot antinge
 - verklig Xcode-build och XCTest,
 - controllerprovning,
 - fysisk Apple TV-provning,
-- två instruktionstillägg för grafikgenerering och zip-säkerhet.
+- slutlig kontroll i `[PLAN3 Prompt 4]` av om ytterligare en kort grafikregel behövs i huvudinstruktionen.
 
 ## Rekommendation inför Prompt 15
 

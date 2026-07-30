@@ -12,7 +12,7 @@
 
 ## Preview-test
 
-Kör testfallen T01–T15 i `prompt-14/TEST-PACK.md`. Registrera faktiskt utfall i en kopia av `prompt-14/TEST-EXECUTION-RESULTS.md`. Markera inte ett test godkänt utifrån enbart förväntat beteende.
+Kör testfallen T01–T04, T05A–T05E och T06–T15 i `prompt-14/TEST-PACK.md`. Registrera faktiskt utfall i en kopia av `prompt-14/TEST-EXECUTION-RESULTS.md`. Markera inte ett test godkänt utifrån enbart förväntat beteende.
 
 ## Referensprojekt
 

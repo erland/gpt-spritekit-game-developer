@@ -596,3 +596,7 @@ Referensprojektet bör demonstrera:
 - enhetstester av logik utan SpriteKit-scen.
 
 Isometrisk projektion och depth sorting ska ligga i separat exempelmodul, i enlighet med projektbeslut D-015.
+
+## Localization boundary
+
+Keep Swift symbols, comments, tests and architecture documentation in English. Treat visible game copy as localized content: use localization keys or string catalogs where practical, keep fallback behavior explicit, and avoid embedding Swedish prose directly in gameplay logic when localization is expected.

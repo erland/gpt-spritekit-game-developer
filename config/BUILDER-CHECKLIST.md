@@ -45,3 +45,8 @@ Efter grundkonfigurationen ska `[PLAN2 Prompt 13]` genomföra fil- och zip-funkt
 - [ ] Bekräfta att hela innehållet i `FINAL-INSTRUCTIONS.md` kan klistras in.
 - [ ] Instruktionen är 7 707 Unicode-tecken och ligger under gränsen 8 000.
 - [ ] Exakt 16 knowledge-filer är uppladdade; inga historiska dubletter.
+
+## Language consistency check
+
+- Verify a Swedish request produces a Swedish chat response but English code, comments, tests and technical documentation.
+- Verify explicitly requested Swedish game UI strings remain Swedish and are treated as localizable content.

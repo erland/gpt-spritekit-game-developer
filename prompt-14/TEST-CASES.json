@@ -51,17 +51,96 @@
     "severity": "critical"
   },
   {
-    "id": "T05",
-    "area": "Grafik",
-    "prompt": "Ta fram ett isometriskt tileset för ett science-fiction-spel och hjälp mig integrera det i SpriteKit.",
+    "id": "T05A",
+    "area": "Grafik — Design Sheet",
+    "prompt": "Ta fram ett visuellt konceptark för isometriska science-fiction-miljöer. Jag vill utforska stil, material, färger och objekttyper innan vi gör spelbara assets.",
     "expected": [
-      "fastställer eller antar dokumenterat tilemått och perspektiv",
-      "anger footpoint/origin och ljusriktning",
-      "skiljer prototyp- och produktionsasset",
-      "planerar atlas och filnamn",
-      "beskriver SpriteKit-integration"
+      "klassificerar leveransen som Design Sheet",
+      "tillåter presentationsgrafik men skiljer den från teknisk export",
+      "anger uttryckligen att resultatet inte är ett rent tileset eller produktionsasset",
+      "föreslår ett separat nästa steg mot Prototype Asset"
+    ],
+    "failure_conditions": [
+      "kallar konceptarket rent tileset, texture atlas eller Production Ready",
+      "påstår att bilden kan delas i ett exakt grid utan teknisk kontroll"
     ],
     "severity": "high"
+  },
+  {
+    "id": "T05B",
+    "area": "Grafik — Prototype Tile Sheet",
+    "prompt": "Skapa ett rent isometriskt prototyptilesheet för SpriteKit utifrån en fastställd science-fiction-stil. Det ska gå att dela upp programmatiskt i tiles.",
+    "expected": [
+      "klassificerar leveransen som Tile Sheet och Prototype Asset",
+      "definierar tilemått, grid, rader, kolumner, spacing och transparens",
+      "utesluter rubriker, kod, ramar, vattenstämplar och dekorativ bakgrund från sheetet",
+      "separerar ground tiles, walls eller edges och props vid olika geometri eller fotpunkt",
+      "definierar fotpunkt, ljusriktning och skuggregel",
+      "märker osäkra egenskaper som Inte verifierad"
+    ],
+    "failure_conditions": [
+      "levererar ett presentationsark som rent tileset",
+      "saknar grid eller cellmått men kallar resultatet tekniskt användbart",
+      "påstår exakt, sömlös eller Production Ready utan validering"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T05C",
+    "area": "Grafik — Assetvalidering",
+    "prompt": "Granska den bifogade tilesetbilden som tekniskt asset. Redovisa vad som är godkänt, underkänt och inte verifierat. Anta inte att något är korrekt bara för att bilden ser bra ut.",
+    "expected": [
+      "klassificerar assettyp och påstådd mognadsnivå",
+      "använder Godkänd, Underkänd, Inte verifierad och Ej tillämplig per kontroll",
+      "granskar dimension, grid, alpha, presentationstext, cellövertramp, perspektiv, ljus, fotpunkt och sömlöshet där relevant",
+      "anger kontrollmetod eller saknat underlag",
+      "låter kritiska Underkänd eller Inte verifierad blockera Production Ready",
+      "skiljer observerbara fel från fil- och scenverifiering"
+    ],
+    "failure_conditions": [
+      "markerar okontrollerade egenskaper som godkända",
+      "använder estetisk kvalitet som tekniskt bevis",
+      "godkänner konceptark som rent tileset trots presentationselement eller saknat grid"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T05D",
+    "area": "Grafik — Production Candidate Package",
+    "prompt": "Paketera ett validerat isometriskt tileset som en produktionskandidat för projektet. Inkludera de dokument och metadata som behövs för fortsatt kontroll och integration.",
+    "expected": [
+      "klassificerar leveransen som Production Candidate",
+      "inkluderar teknisk output, manifest, README, valideringsrapport och SpriteKit-integrationsguide",
+      "dokumenterar tilemått, filer, texture names, fotpunkt, atlasgrupp, användning och kvarstående kontroller",
+      "använder reproducerbar efterbearbetning när exakthet krävs",
+      "redovisar käll- och licensstatus",
+      "blockerar Production Ready tills scen- och integrationskontroll är genomförd"
+    ],
+    "failure_conditions": [
+      "paketet består endast av en presenterad bild",
+      "manifest eller valideringsstatus saknas",
+      "fabricerar verifierad integration eller TV-läsbarhet"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T05E",
+    "area": "Grafik — SpriteKit-integration",
+    "prompt": "Integrera produktionskandidaten i ett SpriteKit-projekt och beskriv vad som måste verifieras innan assetet får status Production Ready.",
+    "expected": [
+      "anger fil- eller atlasstruktur, target membership och texture names",
+      "beskriver SKTextureAtlas och tilemap- eller nodbaserad användning",
+      "hanterar anchorPoint eller fotpunkt, depth sorting och separata kollisionsformer",
+      "beskriver scen-, skala- och TV-läsbarhetskontroller",
+      "skiljer statisk granskning från faktisk build och körning",
+      "ger endast Production Ready efter dokumenterat godkända kontroller"
+    ],
+    "failure_conditions": [
+      "saknar atlas-, namngivnings- eller pivotstrategi",
+      "märker assetet Production Ready utan verifierad laddning och scenkontroll",
+      "fabricerar Xcode-, simulator- eller Apple TV-test"
+    ],
+    "severity": "critical"
   },
   {
     "id": "T06",
@@ -179,6 +258,25 @@
       "låtsas inte ha projektet",
       "begär senaste zip när filerna krävs",
       "kan ge generell vägledning utan att rekonstruera projektet"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T20",
+    "area": "Language consistency and localization",
+    "prompt": "Lägg till en svensk inställningsmeny i SpriteKit-projektet och dokumentera ändringen. Svara gärna på svenska.",
+    "expected": [
+      "chat response may be in Swedish",
+      "source code, identifiers and code comments are in English",
+      "tests and technical documentation are in English",
+      "visible menu strings may be Swedish because the user requested Swedish game text",
+      "user-facing strings are kept localizable and separate from technical identifiers"
+    ],
+    "failure_conditions": [
+      "uses Swedish variable, type or function names for new code",
+      "writes new code comments or technical documentation in Swedish",
+      "translates API names",
+      "refuses Swedish in-game text merely because technical artifacts are English"
     ],
     "severity": "critical"
   }

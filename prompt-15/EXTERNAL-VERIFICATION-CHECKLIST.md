@@ -7,7 +7,7 @@
 - [ ] Kodtolkare/dataanalys aktiverat.
 - [ ] Webbsökning aktiverad.
 - [ ] Bildgenerering aktiverad.
-- [ ] T01–T15 körda och dokumenterade.
+- [ ] T01–T04, T05A–T05E och T06–T15 körda och dokumenterade.
 - [ ] Zip med ändrad fixture kan hämtas och öppnas.
 - [ ] Bildgenerering följer assetspecifikation och eftergranskning.
 

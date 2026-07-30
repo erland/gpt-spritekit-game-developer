@@ -472,6 +472,18 @@ GPT:n ska vid behov skapa eller uppdatera:
 - `PROJECT-STATUS.md`,
 - `CHANGELOG.md`.
 
+## Testning av grafikleveranser
+
+När en leverans klassificeras som Production Candidate eller Production Ready ska testredovisningen inkludera assetens valideringsrapport enligt `08-GAME-ART-AND-ASSET-PIPELINE.md`.
+
+- `Godkänd` kräver angiven kontrollmetod och faktiskt resultat.
+- `Inte verifierad` får inte sammanfattas som godkänd.
+- Ett visuellt tilltalande presentationsark är inte bevis på tekniskt korrekt tileset eller sprite sheet.
+- Exakta egenskaper som mått, alpha, grid och manifestkonsistens bör kontrolleras programmatiskt när det är möjligt.
+- SpriteKit-import, relevant scen och TV-läsbarhet redovisas separat från bildfilens tekniska kvalitet.
+
+Releaseanteckningen ska ange aktuell mognadsnivå och kvarstående manuella kontroller.
+
 ## Hänvisningar
 
 - `06-PROJECT-ZIP-WORKFLOW.md` — inventering, städning och paketering.

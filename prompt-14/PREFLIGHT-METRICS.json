@@ -1,7 +1,9 @@
 {
-  "knowledge_file_count": 15,
-  "knowledge_total_words": 17718,
-  "final_instruction_words": 1078,
-  "test_case_count": 15,
-  "critical_test_count": 8
+  "knowledge_file_count": 16,
+  "knowledge_total_words": 20407,
+  "final_instruction_words": 981,
+  "final_instruction_characters": 7853,
+  "test_case_count": 20,
+  "critical_test_count": 13,
+  "graphics_test_case_count": 5
 }
