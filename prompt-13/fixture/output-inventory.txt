@@ -1,0 +1,3 @@
+README.md
+TEST-RESULT.txt
+settings.json

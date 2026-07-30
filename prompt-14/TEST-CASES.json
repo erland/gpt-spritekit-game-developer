@@ -1,0 +1,185 @@
+[
+  {
+    "id": "T01",
+    "area": "Speldesign",
+    "prompt": "Jag vill skapa ett enkelt shoot 'em up för Apple TV. Hjälp mig hitta minsta spelbara prototyp.",
+    "expected": [
+      "identifierar genre och kärnupplevelse",
+      "föreslår liten prototyp",
+      "prioriterar game feel och läsbarhet",
+      "bedömer SpriteKit som rimligt",
+      "undviker onödigt stor scope"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T02",
+    "area": "Inspirationsspel",
+    "prompt": "Jag vill göra något som The Last Ninja, fast modernt.",
+    "expected": [
+      "analyserar abstrakta egenskaper",
+      "frågar eller härleder vad användaren uppskattar",
+      "föreslår tydlig differentiering",
+      "kopierar inte banor, figurer, namn eller pussel",
+      "formulerar en självständig pitch"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T03",
+    "area": "Teknikgrind",
+    "prompt": "Jag vill göra ett fritt 3D-spel med roterbar kamera och stora sammanhängande miljöer i SpriteKit.",
+    "expected": [
+      "varnar tydligt för teknikvalet",
+      "skiljer möjligt från praktiskt lämpligt",
+      "föreslår riskprototyp, minskat scope eller annan motor",
+      "byter inte motor utan motivering"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T04",
+    "area": "Zip-arbetsflöde",
+    "prompt": "Här är senaste projektzippen. Lägg till paus och ge mig en uppdaterad zip.",
+    "expected": [
+      "inventerar zippen först",
+      "använder senaste zip som sanningskälla",
+      "gör minsta rimliga ändring",
+      "redovisar faktiskt utförda tester",
+      "skapar ren ny zip"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T05",
+    "area": "Grafik",
+    "prompt": "Ta fram ett isometriskt tileset för ett science-fiction-spel och hjälp mig integrera det i SpriteKit.",
+    "expected": [
+      "fastställer eller antar dokumenterat tilemått och perspektiv",
+      "anger footpoint/origin och ljusriktning",
+      "skiljer prototyp- och produktionsasset",
+      "planerar atlas och filnamn",
+      "beskriver SpriteKit-integration"
+    ],
+    "severity": "high"
+  },
+  {
+    "id": "T06",
+    "area": "Plattformsspel",
+    "prompt": "Hoppet känns oprecist. Vad ska jag mäta och ändra?",
+    "expected": [
+      "fokuserar på acceleration, gravitation, jump velocity, coyote time och input buffer",
+      "föreslår mätbara parametrar",
+      "skiljer kodtest från playtest",
+      "undviker generell nybörjarförklaring"
+    ],
+    "severity": "high"
+  },
+  {
+    "id": "T07",
+    "area": "Turordningsstrategi",
+    "prompt": "Hur balanserar jag två enhetstyper i ett turordningsspel?",
+    "expected": [
+      "identifierar roller och beslutsutrymme",
+      "föreslår modell eller simulering",
+      "varnar för enbart DPS-jämförelse",
+      "inkluderar kartposition, ekonomi och handlingsvärde"
+    ],
+    "severity": "high"
+  },
+  {
+    "id": "T08",
+    "area": "Controller/tvOS",
+    "prompt": "Spelet fungerar med tangentbord på Mac. Vad måste verifieras innan Apple TV-test?",
+    "expected": [
+      "controlleranslutning och frånkoppling",
+      "dead zones och flankdetektering",
+      "paus och återupptagning",
+      "fokusnavigering där relevant",
+      "TV-läsbarhet och safe areas"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T09",
+    "area": "Kommunikationsnivå",
+    "prompt": "Implementera en state machine för animationer. Hoppa över grundläggande Swift-förklaringar.",
+    "expected": [
+      "svarar tekniskt och direkt",
+      "förklarar spelarkitekturella konsekvenser",
+      "undviker grundläggande språklektion",
+      "behåller testbarhet"
+    ],
+    "severity": "medium"
+  },
+  {
+    "id": "T10",
+    "area": "Testredovisning",
+    "prompt": "Är det säkert att projektet bygger på fysisk Apple TV?",
+    "expected": [
+      "påstår inte att det är byggt utan bevis",
+      "skiljer strukturell granskning från Xcode-build",
+      "ger konkret manuell verifiering",
+      "redovisar osäkerhet"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T11",
+    "area": "Lokal multiplayer",
+    "prompt": "Lägg till stöd för två lokala spelare i referensarkitekturen.",
+    "expected": [
+      "modell för spelartilldelning och flera controllers",
+      "hanterar frånkoppling per spelare",
+      "diskuterar gemensam/delad kamera",
+      "överkomplicerar inte grundprojektet"
+    ],
+    "severity": "high"
+  },
+  {
+    "id": "T12",
+    "area": "Scopekontroll",
+    "prompt": "Jag vill börja med 12 världar, 40 fiender och full produktionsgrafik.",
+    "expected": [
+      "föreslår vertical slice",
+      "identifierar största risk",
+      "prioriterar placeholdergrafik",
+      "ger konkret minskad scope"
+    ],
+    "severity": "critical"
+  },
+  {
+    "id": "T13",
+    "area": "Bildgenerering",
+    "prompt": "Generera en åttaframars gånganimation med transparent bakgrund.",
+    "expected": [
+      "specificerar konsekvent siluett, riktning, canvas och footpoint",
+      "varnar för frame-to-frame drift",
+      "föreslår kvalitetskontroll och atlaslayout",
+      "integrerar med assetplan"
+    ],
+    "severity": "high"
+  },
+  {
+    "id": "T14",
+    "area": "Aktuell dokumentation",
+    "prompt": "Vilket tvOS- eller SpriteKit-API bör jag använda för controllerinput idag?",
+    "expected": [
+      "använder webbsökning när aktualitet spelar roll",
+      "prioriterar officiell Apple-dokumentation",
+      "skiljer aktuella fakta från arkitekturråd"
+    ],
+    "severity": "high"
+  },
+  {
+    "id": "T15",
+    "area": "Saknad projektfil",
+    "prompt": "Fortsätt ändra mitt projekt från förra chatten, men jag laddar inte upp zippen.",
+    "expected": [
+      "låtsas inte ha projektet",
+      "begär senaste zip när filerna krävs",
+      "kan ge generell vägledning utan att rekonstruera projektet"
+    ],
+    "severity": "critical"
+  }
+]

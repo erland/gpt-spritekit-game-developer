@@ -1,0 +1,48 @@
+name: Build and test
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  xcode:
+    name: macOS tests and tvOS simulator build
+    runs-on: macos-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode environment
+        run: |
+          set -o pipefail
+          xcodebuild -version
+          xcodebuild -list -project ReferenceGame.xcodeproj
+
+      - name: Run macOS tests
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -project ReferenceGame.xcodeproj \
+            -scheme ReferenceGame-macOS \
+            -destination 'platform=macOS' \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Build tvOS Simulator target
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project ReferenceGame.xcodeproj \
+            -scheme ReferenceGame-tvOS \
+            -destination 'generic/platform=tvOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO
