@@ -1,8 +1,8 @@
-# Manifest för kunskapsfiler
+# Manifest för Knowledge-filer
 
-## Rekommenderade kärnfiler
+## Kanonisk Knowledge-uppsättning
 
-Ladda upp följande 16 filer från `knowledge/`:
+Ladda upp exakt följande 16 filer från `knowledge/`:
 
 1. `01-GPT-ROLE-AND-PRINCIPLES.md`
 2. `02-GAME-DESIGN-FOUNDATIONS.md`
@@ -21,45 +21,26 @@ Ladda upp följande 16 filer från `knowledge/`:
 15. `15-GENRE-LOCAL-MULTIPLAYER.md`
 16. `16-VERSION-CONTROL-AND-CI.md`
 
-## Filer som inte ska laddas upp som kunskap
+## Filer som inte ska laddas upp som Knowledge
 
-Följande filer styr projektbygget men ska inte normalt laddas upp i GPT:ns kunskapssektion:
-
-- `PLAN.md`
-- `PLAN2.md`
-- `PROJECT-STATUS.md`
-- `CHANGELOG.md`
-- `DECISIONS.md`
-- `OPEN-QUESTIONS.md`
-- hela builder-zippen
-- historiska releasezippar
-
-De innehåller process- och versionsinformation snarare än stabil ämneskunskap.
+Repositorymetadata, konfigurationsfiler, buildscript, distributionsmetadata och hela builder-/release-ZIP:ar ska inte laddas upp som permanent GPT Knowledge. De beskriver paketering och installation snarare än stabil ämneskunskap.
 
 ## Referensprojektet
 
-Referensprojektet ska behållas i builder-paketet och användas vid utveckling och test av GPT:n. Det behöver inte laddas upp permanent som GPT-kunskap i version 1.0 eftersom:
+`reference-project/` behålls som aktuellt utvecklings- och testunderlag men ska inte laddas upp permanent som GPT Knowledge i version 1.x eftersom:
 
-- de centrala arkitekturprinciperna redan finns i kunskapsfilerna,
-- en uppladdad projektzip i en faktisk konversation ska vara sanningskällan,
-- kodexempel riskerar att bli behandlade som mall även när ett projekt kräver annan struktur.
-
-Vid behov kan utvalda referensprojektfiler senare samlas i en separat, fokuserad kunskapsfil efter preflight.
+- de centrala arkitekturprinciperna redan finns i Knowledge-filerna,
+- en uppladdad projekt-ZIP i en faktisk konversation ska vara sanningskällan,
+- kodexempel riskerar att behandlas som mall även när ett projekt kräver annan struktur.
 
 ## Filbudget
 
-Kärnuppsättningen använder 16 filer. Det lämnar utrymme för upp till fyra framtida specialfiler, exempelvis:
-
-- mer avancerad isometrisk arkitektur,
-- Game Center,
-- tillgänglighet,
-- prestandaprofilering,
-- App Store- och distributionsflöde.
+Kärnuppsättningen använder 16 filer och lämnar utrymme för framtida fokuserade Knowledge-filer.
 
 ## Kontroll efter uppladdning
 
 - Kontrollera att samtliga 16 filer syns.
-- Kontrollera att inga historiska dubletter har laddats upp.
+- Kontrollera att inga historiska eller dubblerade filer har laddats upp.
 - Testa i Förhandsvisning att GPT:n använder rätt genreprofil.
-- Testa att huvudinstruktionen har företräde framför kunskapsfilerna.
-- Testa att GPT:n inte citerar eller återger stora delar av kunskapsfilerna i onödan.
+- Testa att huvudinstruktionen har företräde framför Knowledge-filerna.
+- Testa att GPT:n inte citerar eller återger stora delar av Knowledge-filerna i onödan.

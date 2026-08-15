@@ -1,5 +1,0 @@
-Archive:  /mnt/data/work13/tvos-spritekit-gpt-builder/prompt-13/fixture/fixture-output.zip
-    testing: README.md                OK
-    testing: settings.json            OK
-    testing: TEST-RESULT.txt          OK
-No errors detected in compressed data of /mnt/data/work13/tvos-spritekit-gpt-builder/prompt-13/fixture/fixture-output.zip.

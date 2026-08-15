@@ -46,7 +46,7 @@ Lägg inte till externa anslutningar enbart för att de finns. Projektzippen och
 
 ## Viktig verifiering
 
-Efter att funktionerna aktiverats ska Prompt 13 verifiera att GPT:n faktiskt kan:
+Efter att funktionerna aktiverats ska Förhandsvisning verifiera att GPT:n faktiskt kan:
 
 1. ta emot en zip,
 2. packa upp och inventera den,

@@ -1,2 +1,0 @@
-55cc18c087f62861355b71d702e8b6ed039da759d303d937cd9d6d0702f37480  /mnt/data/work13/tvos-spritekit-gpt-builder/prompt-13/fixture/fixture-input.zip
-495a5a71669a70b5d3846ea79526ab6272e92e645d63370fe209c75e95403fec  /mnt/data/work13/tvos-spritekit-gpt-builder/prompt-13/fixture/fixture-output.zip

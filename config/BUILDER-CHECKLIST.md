@@ -3,7 +3,7 @@
 ## Förberedelser
 
 - Använd webbversionen av ChatGPT för att skapa eller redigera GPT:n.
-- Skapa GPT:n med delningsnivån **Endast jag**.
+- Skapa GPT:n med delningsnivån **Endast jag** tills valideringen är klar.
 
 ## Konfiguration
 
@@ -11,11 +11,11 @@
 - [ ] Klistra in beskrivningen från `GPT-CONFIGURATION.md`.
 - [ ] Lägg in en egen eller genererad profilbild enligt ikonbriefen.
 - [ ] Klistra in innehållet från `FINAL-INSTRUCTIONS.md` i instruktionsfältet.
-- [ ] Lägg in de fyra rekommenderade samtalsstartarna.
+- [ ] Lägg in de rekommenderade samtalsstartarna från `CONVERSATION-STARTERS.md`.
 
-## Kunskap
+## Knowledge
 
-- [ ] Ladda upp de 15 filerna i `KNOWLEDGE-UPLOAD-MANIFEST.md`.
+- [ ] Ladda upp exakt de 16 filerna i `KNOWLEDGE-UPLOAD-MANIFEST.md`.
 - [ ] Kontrollera att inga historiska eller dubblerade filer har laddats upp.
 - [ ] Kontrollera att alla filer har behandlats utan fel.
 
@@ -23,9 +23,9 @@
 
 - [ ] Aktivera webbsökning.
 - [ ] Aktivera Kodtolkare och dataanalys.
-- [ ] Aktivera bildgenerering.
-- [ ] Aktivera Canvas om det finns och bedöms användbart.
-- [ ] Lägg inte till Actions i version 1.0.
+- [ ] Aktivera bildgenerering endast om enkla koncept/prototypbilder ska kunna skapas; använd den inte som ersättning för separat grafikskapare.
+- [ ] Aktivera längre dokument-/kodeditering om motsvarande funktion finns och bedöms användbar.
+- [ ] Lägg inte till externa Actions utan ett konkret behov.
 
 ## Förhandsvisning
 
@@ -35,18 +35,15 @@
 - [ ] Testa grafik- och assetspecifikation.
 - [ ] Testa att GPT:n svarar tekniskt utan onödig nybörjarförklaring.
 - [ ] Testa att GPT:n redovisar osäkerhet och testbegränsningar korrekt.
+- [ ] Testa zip-flödet: ta emot, inventera, ändra och återleverera ett projekt.
 
-## Nästa steg
+## Storleks- och innehållskontroll
 
-Efter grundkonfigurationen ska `[PLAN2 Prompt 13]` genomföra fil- och zip-funktionstestet innan GPT:n delas eller betraktas som version 1.0.
+- [ ] Bekräfta att hela `FINAL-INSTRUCTIONS.md` kan klistras in i GPT Builder.
+- [ ] Exakt 16 Knowledge-filer är uppladdade.
+- [ ] Inga historiska dubletter eller repositorydokument är uppladdade som Knowledge.
 
-## Storlekskontroll för rc3
+## Språkkontroll
 
-- [ ] Bekräfta att hela innehållet i `FINAL-INSTRUCTIONS.md` kan klistras in.
-- [ ] Instruktionen är 7 707 Unicode-tecken och ligger under gränsen 8 000.
-- [ ] Exakt 16 knowledge-filer är uppladdade; inga historiska dubletter.
-
-## Language consistency check
-
-- Verify a Swedish request produces a Swedish chat response but English code, comments, tests and technical documentation.
-- Verify explicitly requested Swedish game UI strings remain Swedish and are treated as localizable content.
+- Verifiera att en svensk begäran ger svenskt chattsvar men engelska kodkommentarer, tester och teknisk dokumentation.
+- Verifiera att uttryckligen önskad svensk speltext förblir svensk och behandlas som lokaliserbart innehåll.
