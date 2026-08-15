@@ -52,3 +52,14 @@ Chat responses may follow the user's language, but technical project artifacts a
 ## Graphics responsibility in rc12
 
 This GPT plans, specifies, reviews, and integrates game assets. Polished sprite and tileset production is delegated to a separate Game Graphics Creator through a standardized Asset Request Package.
+
+## Portable Chat-distribution och releases
+
+Repositoryt kan bygga två distributionspaket från samma kanoniska GPT-underlag:
+
+- `spritekit-developer-custom-gpt-vX.Y.Z.zip` för installation/arkivering av Custom GPT-konfigurationen.
+- `spritekit-developer-chat-vX.Y.Z.zip` för användning i en vanlig ChatGPT-konversation. Bifoga paketet och be ChatGPT läsa `START-HERE.md` först.
+
+Kör lokalt med `python3 scripts/build_distributions.py` och verifiera med `python3 scripts/validate_distributions.py`.
+
+Vanliga push-, pull request- och manuella workflow-körningar använder `VERSION` som paketversion. När en GitHub Release publiceras används i stället release-taggen som versionskälla. En release med taggen `v1.1.0` producerar därför paket med `v1.1.0` i filnamn och intern versionsmetadata. Release-taggen måste följa `vMAJOR.MINOR.PATCH` (SemVer).
