@@ -35,4 +35,4 @@ Använd innehållet i `FINAL-INSTRUCTIONS.md` utan denna rubrik och introduktion
 
 Rekommenderad start: **Endast jag**.
 
-Byt till länkdelning först efter Prompt 14–15 när testpaket och preflight är genomförda.
+Byt till länkdelning först efter att builder-checklistan och Förhandsvisningstesterna har genomförts.
