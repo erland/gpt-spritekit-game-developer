@@ -12,13 +12,27 @@ def main():
   if not z.exists(): raise SystemExit(f'Missing {z}')
   with zipfile.ZipFile(z) as q:
    if q.testzip(): raise SystemExit(f'Corrupt zip: {z}')
+ critical=[
+  'tvOS är produktplattform',
+  'macOS är officiell utvecklings- och testplattform',
+  'Den senaste kompletta åtkomliga projektzippen är sanningskällan.',
+  'Säkerhetsgranska arkivvägar mot zip-slip/path traversal',
+  'ändra aldrig originalarkivet',
+  'Påstå aldrig att något är byggt, testat eller verifierat om det inte är det.',
+ ]
  with zipfile.ZipFile(cz) as z:
-  assert z.read('config/FINAL-INSTRUCTIONS.md')==(ROOT/'config/FINAL-INSTRUCTIONS.md').read_bytes()
+  custom_instr=z.read('config/FINAL-INSTRUCTIONS.md')
+  assert custom_instr==(ROOT/'assistant/instructions.md').read_bytes()
+  for marker in critical:
+   assert marker in custom_instr.decode('utf-8'), f'Custom GPT missing behavior marker: {marker}'
   assert z.read('config/CONVERSATION-STARTERS.md')==(ROOT/'config/CONVERSATION-STARTERS.md').read_bytes()
   for n in KNOWLEDGE: assert z.read('knowledge/'+n)==(ROOT/'knowledge'/n).read_bytes()
   assert z.read('VERSION').decode().strip()==v
  with zipfile.ZipFile(pz) as z:
-  assert z.read('assistant/instructions.md')==(ROOT/'config/FINAL-INSTRUCTIONS.md').read_bytes()
+  chat_instr=z.read('assistant/instructions.md')
+  assert chat_instr==(ROOT/'assistant/instructions.md').read_bytes()
+  for marker in critical:
+   assert marker in chat_instr.decode('utf-8'), f'Chat missing behavior marker: {marker}'
   assert z.read('assistant/conversation-starters.md')==(ROOT/'config/CONVERSATION-STARTERS.md').read_bytes()
   for n in KNOWLEDGE: assert z.read('knowledge/'+n)==(ROOT/'knowledge'/n).read_bytes()
   assert z.read('VERSION').decode().strip()==v
