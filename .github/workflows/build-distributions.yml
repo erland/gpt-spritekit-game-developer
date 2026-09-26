@@ -16,6 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install validation dependencies
+        run: python3 -m pip install PyYAML
       - name: Resolve version
         id: version
         shell: bash
@@ -31,6 +37,8 @@ jobs:
             VERSION="$(tr -d '[:space:]' < VERSION)"
           fi
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Validate GPT Builder 1.5 canonical contract
+        run: python3 scripts/validate_gpt_builder_1_5_contract.py
       - name: Build distributions
         run: python3 scripts/build_distributions.py --version "${{ steps.version.outputs.version }}"
       - name: Validate distributions
