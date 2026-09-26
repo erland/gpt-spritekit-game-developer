@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse, hashlib, json, re, shutil, zipfile
 from pathlib import Path
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 KNOWLEDGE = [
@@ -33,21 +34,32 @@ def write_zip(src: Path, dest: Path):
 
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 
+def registry_targets():
+    r=yaml.safe_load((ROOT/'runtime-distribution-registry.yaml').read_text(encoding='utf-8'))
+    targets=list(r.get('active_targets',[]) or [])
+    supported={'chat','custom-gpt'}
+    unknown=set(targets)-supported
+    if unknown:
+        raise SystemExit(f'Registry contains unsupported active targets: {sorted(unknown)}')
+    return targets
+
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--version'); ap.add_argument('--output-dir',default='dist'); a=ap.parse_args()
+    targets=registry_targets()
     v=version(a.version); out=ROOT/a.output_dir; shutil.rmtree(out,ignore_errors=True); out.mkdir(parents=True)
     tmp=out/'.build'; custom=tmp/'custom'; chat=tmp/'chat'
     for d in (custom,chat): d.mkdir(parents=True)
     # Custom GPT package: preserve canonical builder inputs byte-for-byte.
     (custom/'config').mkdir(); (custom/'knowledge').mkdir()
-    for n in ['FINAL-INSTRUCTIONS.md','CONVERSATION-STARTERS.md','GPT-CONFIGURATION.md','BUILDER-CHECKLIST.md','KNOWLEDGE-UPLOAD-MANIFEST.md','CAPABILITIES.md']:
+    for n in ['CONVERSATION-STARTERS.md','GPT-CONFIGURATION.md','BUILDER-CHECKLIST.md','KNOWLEDGE-UPLOAD-MANIFEST.md','CAPABILITIES.md']:
         shutil.copy2(ROOT/'config'/n, custom/'config'/n)
+    shutil.copy2(ROOT/'assistant/instructions.md', custom/'config/FINAL-INSTRUCTIONS.md')
     for n in KNOWLEDGE: shutil.copy2(ROOT/'knowledge'/n, custom/'knowledge'/n)
     (custom/'VERSION').write_text(v+'\n',encoding='utf-8')
     # Portable package.
     (chat/'assistant').mkdir(); (chat/'knowledge').mkdir()
     shutil.copy2(ROOT/'portable/START-HERE.md',chat/'START-HERE.md')
-    shutil.copy2(ROOT/'config/FINAL-INSTRUCTIONS.md',chat/'assistant/instructions.md')
+    shutil.copy2(ROOT/'assistant/instructions.md',chat/'assistant/instructions.md')
     shutil.copy2(ROOT/'config/CONVERSATION-STARTERS.md',chat/'assistant/conversation-starters.md')
     for n in KNOWLEDGE: shutil.copy2(ROOT/'knowledge'/n,chat/'knowledge'/n)
     (chat/'VERSION').write_text(v+'\n',encoding='utf-8')
@@ -57,7 +69,13 @@ def main():
         files[p.relative_to(chat).as_posix()]=sha(p)
     manifest['sha256']=files
     (chat/'MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    cz=out/f'spritekit-developer-custom-gpt-v{v}.zip'; pz=out/f'spritekit-developer-chat-v{v}.zip'
-    write_zip(custom,cz); write_zip(chat,pz); shutil.rmtree(tmp)
-    print(cz); print(pz)
+    built=[]
+    if 'custom-gpt' in targets:
+        cz=out/f'spritekit-developer-custom-gpt-v{v}.zip'
+        write_zip(custom,cz); built.append(cz)
+    if 'chat' in targets:
+        pz=out/f'spritekit-developer-chat-v{v}.zip'
+        write_zip(chat,pz); built.append(pz)
+    shutil.rmtree(tmp)
+    for p in built: print(p)
 if __name__=='__main__': main()

@@ -1,0 +1,138 @@
+schema_version: 1
+builder:
+  target_version: 1.5.0
+  strategy: normalize_existing_canonical_contract
+  behavior_preserving: true
+
+canonical:
+  project_contract: gpt-project.yaml
+  instruction: assistant/instructions.md
+  legacy_instruction: config/FINAL-INSTRUCTIONS.md
+  version_file: VERSION
+  knowledge_root: knowledge
+  knowledge_manifest: config/KNOWLEDGE-UPLOAD-MANIFEST.md
+  reference_project_root: reference-project
+
+contracts:
+  capabilities:
+    critical:
+      - project_zip_ingest_and_safe_extraction
+      - structured_file_editing_and_packaging
+      - code_execution_and_static_validation
+      - spritekit_swift_tvos_development
+    required:
+      - game_design_and_risk_prototyping
+      - controller_and_tv_ux
+      - asset_requirements_review_and_integration
+      - testing_truthfulness
+      - git_and_ci_guidance
+      - release_packaging
+    optional:
+      - image_generation
+      - web_research
+
+  artifacts:
+    required:
+      project_zip:
+        latest_complete_accessible_zip_is_source_of_truth: true
+        safe_extraction_required: true
+        mutate_original_archive: false
+      technical_sources:
+        language: english
+        includes:
+          - swift
+          - xcode_project
+          - tests
+          - project_documentation
+      generated_release:
+        must_be_new_complete_verified_zip: true
+        excludes:
+          - .git
+          - derived_data
+          - local_build_products
+          - caches
+          - temporary_files
+          - duplicate_exports
+
+  state:
+    authority:
+      current_request: current_user_requirements
+      project_zip: latest_complete_accessible_project_zip
+      guidance: canonical_instruction_plus_knowledge
+    inspect_before_change: true
+    preserve_working_parts: true
+    never_reconstruct_missing_project_from_memory: true
+    maintain_project_decisions_in_files_not_chat_only: true
+
+  tools:
+    required:
+      - id: file-upload
+        purpose:
+          - ingest_project_zip
+          - inspect_code_assets_tests_docs
+      - id: code-execution-or-data-analysis
+        purpose:
+          - safe_archive_analysis
+          - edit_project_files
+          - static_checks
+          - simulations
+          - package_release_zip
+    conditional:
+      - id: web
+        purpose:
+          - current_official_apple_documentation
+          - current_tvos_spritekit_xcode_game_controller_information
+      - id: image-generation
+        purpose:
+          - concept_or_temporary_prototype_images_only
+
+behavior:
+  tvos_is_product_platform: true
+  macos_is_official_dev_test_platform: true
+  swift_spritekit_game_controller_default_stack: true
+  small_risk_prototype_before_engine_change: true
+  separate_game_logic_from_spritekit_when_useful: true
+  controller_without_touch_mouse_keyboard_required: true
+  tv_distance_readability_required: true
+  asset_request_package_preferred_for_polished_graphics: true
+  do_not_claim_production_ready_assets_without_verification: true
+  zip_slip_path_traversal_review_required: true
+  work_in_separate_folder: true
+  never_modify_original_archive: true
+  distinguish_executed_tests_from_static_and_manual_checks: true
+  never_claim_tested_if_not_tested: true
+  simulations_not_substitute_for_game_feel: true
+  ci_requires_actual_workflow_verification: true
+
+knowledge:
+  expected_files: 16
+  reference_project_is_permanent_knowledge: false
+
+release_policy:
+  current_version: 1.0.0
+  preserve_version_during_migration: true
+
+runtime_policy:
+  active:
+    chat:
+      compatibility: equivalent_runtime_dependent
+    custom-gpt:
+      compatibility: equivalent_with_platform_constraints
+  inactive:
+    claude:
+      compatibility: reduced
+      activation: not_active
+      blocker: deterministic_project_edit_xcode_test_and_zip_parity_not_guaranteed
+      assessment: docs/claude-opencode-compatibility.md
+    opencode:
+      compatibility: equivalent
+      activation: not_active
+      blocker: distribution_and_regression_not_implemented
+      assessment: docs/claude-opencode-compatibility.md
+    openai_plugin:
+      compatibility: reduced
+      status: assessed_not_active
+      architecture: skills_first
+      activation: not_active
+      blocker: deterministic_project_edit_xcode_test_and_zip_parity_not_implemented
+      assessment: docs/openai-plugin-compatibility.md

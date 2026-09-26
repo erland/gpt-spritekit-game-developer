@@ -58,3 +58,25 @@ python3 scripts/validate_distributions.py
 ```
 
 Vanliga push-, pull request- och manuella workflow-körningar använder `VERSION` som paketversion. När en GitHub Release publiceras används i stället release-taggen som versionskälla. En release med taggen `v1.1.0` producerar därför paket med `v1.1.0` i filnamn och intern versionsmetadata. Release-taggen måste följa `vMAJOR.MINOR.PATCH` (SemVer).
+
+
+## GPT Byggaren 1.5.0
+
+Migreringen är **7/7 komplett**. Canonical instruktion finns i `assistant/instructions.md`; legacy-källan `config/FINAL-INSTRUCTIONS.md` bevaras. Build, validering och aktivt distributionsset härleds från `runtime-distribution-registry.yaml`.
+
+Bevarat genom migreringen:
+- version `1.0.0`
+- 16/16 Knowledge-filer
+- instruktion inom GPT Builder-gränsen
+- projekt-zip som sanningskälla
+- zip-slip/path traversal-kontroll
+- separat arbetsmapp och oförändrat originalarkiv
+- Swift/SpriteKit/tvOS som primär teknisk profil
+- macOS som utvecklings-/testplattform
+- controller- och TV-UX-krav
+- asset-specifikation, granskning och integration
+- tydlig skillnad mellan faktiskt körda tester, statiska kontroller och manuell granskning
+- Git/CI-principer och faktisk workflow-verifiering
+- referensprojektets roll som utvecklings-/testunderlag, inte permanent Knowledge
+
+Aktiva runtimes är Chat och Custom GPT. OpenCode är compatibility-bedömd som equivalent candidate men inte aktiv. Claude Projects och OpenAI Plugin är reduced candidates och inte aktiva distributionsmål.

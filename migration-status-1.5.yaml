@@ -1,0 +1,164 @@
+schema_version: 1
+project:
+  id: spritekit-game-developer
+  name: SpriteKit Game Designer & Developer
+  version: 1.0.0
+
+migration:
+  target_builder_version: 1.5.0
+  strategy: behavior_preserving
+  plan: docs/gpt-builder-1.5-runtime-migration.md
+  total_steps: 7
+
+progress:
+  current_step: 7
+  last_completed_step: 7
+  completed_steps:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+  skipped_steps: []
+
+preservation:
+  canonical_instruction: assistant/instructions.md
+  legacy_instruction_source: config/FINAL-INSTRUCTIONS.md
+  canonical_matches_legacy_byte_identical: true
+  preserve_version_1_0_0: true
+  preserve_knowledge_16_of_16: true
+  preserve_project_zip_as_source_of_truth: true
+  preserve_safe_zip_handling: true
+  preserve_swift_spritekit_tvos_profile: true
+  preserve_macos_dev_test_platform: true
+  preserve_controller_tv_ux: true
+  preserve_small_risk_prototype_workflow: true
+  preserve_asset_request_review_integration: true
+  preserve_test_truthfulness: true
+  preserve_git_ci_workflow: true
+  preserve_reference_project_role: true
+
+gpt_builder_1_5:
+  normalized_contract: gpt-builder-1.5-contract.yaml
+  validation: scripts/validate_gpt_builder_1_5_contract.py
+  canonical_instruction: assistant/instructions.md
+  canonical_matches_legacy_instruction: true
+  safe_zip_workflow_preserved: true
+  swift_spritekit_tvos_profile_preserved: true
+  macos_dev_test_platform_preserved: true
+  controller_tv_ux_preserved: true
+  asset_request_review_integration_preserved: true
+  test_truthfulness_preserved: true
+  git_ci_workflow_preserved: true
+  knowledge_16_of_16_preserved: true
+  version_1_0_0_preserved: true
+  status: passed
+
+chat_custom_normalization:
+  status: passed
+  canonical_instruction_source: assistant/instructions.md
+  custom_gpt_packaging_path: config/FINAL-INSTRUCTIONS.md
+  chat_instruction_path: assistant/instructions.md
+  both_built_from_same_canonical_source: true
+  knowledge_16_of_16_in_both: true
+  spritekit_tvos_markers_verified: true
+  zip_safety_markers_verified: true
+  controller_tv_ux_contract_preserved: true
+  testing_truthfulness_markers_verified: true
+  version_1_0_0_preserved: true
+
+runtime_baseline:
+  active:
+    - chat
+    - custom-gpt
+  inactive:
+    claude:
+      compatibility: reduced
+      blocker: deterministic_project_edit_xcode_test_and_zip_parity_not_guaranteed
+      assessment: docs/claude-opencode-compatibility.md
+    opencode:
+      compatibility: equivalent
+      blocker: distribution_and_regression_not_implemented
+      assessment: docs/claude-opencode-compatibility.md
+  inactive:
+    openai_plugin:
+      compatibility: reduced
+      status: assessed_not_active
+      architecture: skills_first
+      activation: not_active
+      blocker: deterministic_project_edit_xcode_test_and_zip_parity_not_implemented
+      assessment: docs/openai-plugin-compatibility.md
+
+claude_opencode_assessment:
+  status: passed
+  assessment: docs/claude-opencode-compatibility.md
+  canonical_behavior_changed: false
+  claude:
+    compatibility: reduced
+    activation: not_active
+    blocker: deterministic_project_edit_xcode_test_and_zip_parity_not_guaranteed
+  opencode:
+    compatibility: equivalent
+    activation: not_active
+    blocker: distribution_and_regression_not_implemented
+
+plugin_assessment:
+  status: passed
+  runtime: openai_plugin
+  compatibility: reduced
+  architecture: skills_first
+  activation: not_active
+  blocker: deterministic_project_edit_xcode_test_and_zip_parity_not_implemented
+  assessment: docs/openai-plugin-compatibility.md
+  canonical_behavior_changed: false
+
+runtime_registry:
+  source_of_truth: runtime-distribution-registry.yaml
+  validation: scripts/validate_runtime_distribution_registry.py
+  active_targets:
+    - chat
+    - custom-gpt
+  inactive_candidates:
+    - claude
+    - opencode
+    - openai_plugin
+  exact_artifact_set: true
+  wildcard_runtime_selection: false
+  build_targets_derived_from_registry: true
+  validation_targets_derived_from_registry: true
+  release_assets_are_explicit: true
+
+final_readiness:
+  status: ready_for_merge_after_ci
+  migration_steps_complete: 7
+  migration_steps_total: 7
+  final_gate: scripts/validate_gpt_builder_1_5_migration.py
+  canonical_behavior_preserved: true
+  version_1_0_0_preserved: true
+  knowledge_16_of_16_preserved: true
+  project_zip_source_of_truth_preserved: true
+  zip_safety_preserved: true
+  original_archive_immutable_preserved: true
+  swift_spritekit_tvos_profile_preserved: true
+  macos_dev_test_platform_preserved: true
+  controller_tv_ux_preserved: true
+  asset_workflow_preserved: true
+  testing_truthfulness_preserved: true
+  git_ci_workflow_preserved: true
+  reference_project_role_preserved: true
+  active_targets:
+    - chat
+    - custom-gpt
+  inactive_candidates:
+    - claude
+    - opencode
+    - openai_plugin
+
+next_step:
+  recommended: null
+  title: Migration complete
+  reason: "GPT Byggaren 1.5.0-migreringen är 7/7 komplett."
+
+human_readable_status: "Steg 1–7 av 7 i GPT Byggaren 1.5.0-migreringen är klara. Väntar endast på grön slut-CI för merge-readiness."
