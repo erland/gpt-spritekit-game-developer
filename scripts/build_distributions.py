@@ -40,14 +40,15 @@ def main():
     for d in (custom,chat): d.mkdir(parents=True)
     # Custom GPT package: preserve canonical builder inputs byte-for-byte.
     (custom/'config').mkdir(); (custom/'knowledge').mkdir()
-    for n in ['FINAL-INSTRUCTIONS.md','CONVERSATION-STARTERS.md','GPT-CONFIGURATION.md','BUILDER-CHECKLIST.md','KNOWLEDGE-UPLOAD-MANIFEST.md','CAPABILITIES.md']:
+    for n in ['CONVERSATION-STARTERS.md','GPT-CONFIGURATION.md','BUILDER-CHECKLIST.md','KNOWLEDGE-UPLOAD-MANIFEST.md','CAPABILITIES.md']:
         shutil.copy2(ROOT/'config'/n, custom/'config'/n)
+    shutil.copy2(ROOT/'assistant/instructions.md', custom/'config/FINAL-INSTRUCTIONS.md')
     for n in KNOWLEDGE: shutil.copy2(ROOT/'knowledge'/n, custom/'knowledge'/n)
     (custom/'VERSION').write_text(v+'\n',encoding='utf-8')
     # Portable package.
     (chat/'assistant').mkdir(); (chat/'knowledge').mkdir()
     shutil.copy2(ROOT/'portable/START-HERE.md',chat/'START-HERE.md')
-    shutil.copy2(ROOT/'config/FINAL-INSTRUCTIONS.md',chat/'assistant/instructions.md')
+    shutil.copy2(ROOT/'assistant/instructions.md',chat/'assistant/instructions.md')
     shutil.copy2(ROOT/'config/CONVERSATION-STARTERS.md',chat/'assistant/conversation-starters.md')
     for n in KNOWLEDGE: shutil.copy2(ROOT/'knowledge'/n,chat/'knowledge'/n)
     (chat/'VERSION').write_text(v+'\n',encoding='utf-8')
