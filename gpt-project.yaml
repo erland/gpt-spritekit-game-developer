@@ -1,0 +1,58 @@
+schema_version: 1
+project:
+  id: spritekit-game-developer
+  name: SpriteKit Game Designer & Developer
+  profile: apple_tv_spritekit_design_and_development_assistant
+
+instructions:
+  canonical: assistant/instructions.md
+  legacy_source: config/FINAL-INSTRUCTIONS.md
+  preserve_legacy_source_byte_identical: true
+
+knowledge_architecture:
+  canonical_root: knowledge
+  expected_files: 16
+  manifest: config/KNOWLEDGE-UPLOAD-MANIFEST.md
+  reference_project_root: reference-project
+  reference_project_is_permanent_knowledge: false
+
+runtime:
+  chat_zip:
+    enabled: true
+  custom_gpt:
+    enabled: true
+    instruction:
+      source: assistant/instructions.md
+      packaging_path: config/FINAL-INSTRUCTIONS.md
+      max_characters: 8000
+    knowledge:
+      strategy: manifest_exact
+      expected_files: 16
+  claude:
+    enabled: false
+    compatibility: assessment_pending
+  opencode:
+    enabled: false
+    compatibility: assessment_pending
+  openai_plugin:
+    enabled: false
+    compatibility: assessment_pending
+
+capabilities:
+  critical:
+    - project_zip_ingest_and_safe_extraction
+    - structured_file_editing_and_packaging
+    - code_execution_and_static_validation
+    - spritekit_swift_tvos_development
+  important:
+    - web_research_for_current_apple_platform_information
+    - controller_and_tv_ux
+    - game_design_and_prototyping
+    - asset_requirements_review_and_integration
+    - testing_release_and_ci
+    - optional_image_generation
+
+release:
+  version_file: VERSION
+  preserve_current_version: true
+  current_version: 1.0.0
