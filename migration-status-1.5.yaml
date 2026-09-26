@@ -1,0 +1,51 @@
+schema_version: 1
+project:
+  id: spritekit-game-developer
+  name: SpriteKit Game Designer & Developer
+  version: 1.0.0
+
+migration:
+  target_builder_version: 1.5.0
+  strategy: behavior_preserving
+  plan: docs/gpt-builder-1.5-runtime-migration.md
+  total_steps: 7
+
+progress:
+  current_step: 2
+  last_completed_step: 1
+  completed_steps:
+    - 1
+  skipped_steps: []
+
+preservation:
+  canonical_instruction: assistant/instructions.md
+  legacy_instruction_source: config/FINAL-INSTRUCTIONS.md
+  canonical_matches_legacy_byte_identical: true
+  preserve_version_1_0_0: true
+  preserve_knowledge_16_of_16: true
+  preserve_project_zip_as_source_of_truth: true
+  preserve_safe_zip_handling: true
+  preserve_swift_spritekit_tvos_profile: true
+  preserve_macos_dev_test_platform: true
+  preserve_controller_tv_ux: true
+  preserve_small_risk_prototype_workflow: true
+  preserve_asset_request_review_integration: true
+  preserve_test_truthfulness: true
+  preserve_git_ci_workflow: true
+  preserve_reference_project_role: true
+
+runtime_baseline:
+  active:
+    - chat
+    - custom-gpt
+  assessment_pending:
+    - claude
+    - opencode
+    - openai_plugin
+
+next_step:
+  recommended: 2
+  title: Normalisera GPT Byggaren 1.5-kontrakten
+  reason: "Canonical instruktion och preserve-first baseline är etablerade."
+
+human_readable_status: "Steg 1 av 7 i GPT Byggaren 1.5.0-migreringen är klart."
