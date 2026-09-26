@@ -31,10 +31,16 @@ runtime:
       expected_files: 16
   claude:
     enabled: false
-    compatibility: assessment_pending
+    compatibility: reduced
+    activation: not_active
+    blocker: deterministic_project_edit_xcode_test_and_zip_parity_not_guaranteed
+    assessment: docs/claude-opencode-compatibility.md
   opencode:
     enabled: false
-    compatibility: assessment_pending
+    compatibility: equivalent
+    activation: not_active
+    blocker: distribution_and_regression_not_implemented
+    assessment: docs/claude-opencode-compatibility.md
   openai_plugin:
     enabled: false
     compatibility: assessment_pending
