@@ -231,12 +231,12 @@ capabilities:
     web:
       level: recommended
     filesystem:
-      read: required
-      write: required
+      read: optional
+      write: optional
     shell:
       level: optional
     code_execution:
-      level: required
+      level: optional
     structured_data:
       level: required
     persistent_state:
